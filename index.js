@@ -2,7 +2,8 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { getDb } from "./db.js";
+import { getCollections, getDb } from "./db.js";
+import { verifyToken } from "./Middleware/auth.js";
 import equipmentRouter from "./routes/equipment.js";
 
 const app = express();
@@ -32,6 +33,17 @@ app.use(cookieParser());
 
 app.get("/", (_req, res) => {
   res.json({ name: "Apex Rentals API", status: "running" });
+});
+
+app.get("/auth/me", verifyToken, async (req, res) => {
+  const { users } = await getCollections();
+  const user = await users.findOne(
+    { email: req.decoded.email },
+    { projection: { name: 1, email: 1, image: 1, role: 1, createdAt: 1 } },
+  );
+
+  if (!user) return res.status(404).json({ message: "User not found" });
+  res.json({ user });
 });
 
 app.use("/equipment", equipmentRouter);
