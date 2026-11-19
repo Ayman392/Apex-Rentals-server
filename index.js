@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import { getDb } from "./db.js";
+import equipmentRouter from "./routes/equipment.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -32,6 +33,8 @@ app.use(cookieParser());
 app.get("/", (_req, res) => {
   res.json({ name: "Apex Rentals API", status: "running" });
 });
+
+app.use("/equipment", equipmentRouter);
 
 // Health check: also confirms the database is reachable
 app.get("/health", async (_req, res) => {
