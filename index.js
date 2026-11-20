@@ -48,8 +48,6 @@ app.get("/auth/me", verifyToken, async (req, res) => {
   res.json({ user });
 });
 
-app.use("/equipment", equipmentRouter);
-
 // Health check: also confirms the database is reachable
 app.get("/health", async (_req, res) => {
   try {
@@ -62,7 +60,12 @@ app.get("/health", async (_req, res) => {
   }
 });
 
-// Unknown routes
+// Feature routes (mounted BEFORE the 404 handler)
+app.use("/equipment", equipmentRouter);
+app.use("/favorites", favoritesRouter);
+app.use("/payments", paymentsRouter);
+
+// Unknown routes (must stay after all routes)
 app.use((req, res) => {
   res
     .status(404)
@@ -76,9 +79,6 @@ app.use((err, _req, res, _next) => {
     .status(err.status || 500)
     .json({ message: err.message || "Internal server error" });
 });
-
-app.use("/favorites", favoritesRouter);
-app.use("/payments", paymentsRouter);
 
 // Run a local server; on Vercel the exported app is used instead
 if (!process.env.VERCEL) {
