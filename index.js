@@ -3,7 +3,8 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import { getCollections, getDb } from "./db.js";
-import { verifyToken } from "./Middleware/auth.js";
+import { verifyToken } from "./middleware/auth.js";
+import adminRouter from "./routes/admin.js";
 import equipmentRouter from "./routes/equipment.js";
 import favoritesRouter from "./routes/favorites.js";
 import paymentsRouter from "./routes/payments.js";
@@ -110,6 +111,7 @@ app.get("/health", async (_req, res) => {
 });
 
 // Feature routes (mounted BEFORE the 404 handler)
+app.use("/admin", adminRouter);
 app.use("/equipment", equipmentRouter);
 app.use("/favorites", favoritesRouter);
 app.use("/payments", paymentsRouter);

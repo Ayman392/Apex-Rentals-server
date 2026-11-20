@@ -1,7 +1,7 @@
 import express from "express";
 import { ObjectId } from "mongodb";
 import { getCollections } from "../db.js";
-import { verifyToken, verifyOwner } from "../Middleware/auth.js";
+import { verifyToken, verifyOwner } from "../middleware/auth.js";
 
 const router = express.Router();
 

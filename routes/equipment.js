@@ -97,7 +97,7 @@ router.get("/", async (req, res) => {
   });
 });
 
-import { verifyToken, verifyOwner } from "../Middleware/auth.js";
+import { verifyToken, verifyOwner } from "../middleware/auth.js";
 
 // GET /equipment/my — Listings belonging to the signed-in owner
 router.get("/my", verifyToken, verifyOwner, async (req, res) => {
