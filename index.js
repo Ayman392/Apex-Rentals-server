@@ -5,6 +5,8 @@ import cookieParser from "cookie-parser";
 import { getCollections, getDb } from "./db.js";
 import { verifyToken } from "./Middleware/auth.js";
 import equipmentRouter from "./routes/equipment.js";
+import favoritesRouter from "./routes/favorites.js";
+import paymentsRouter from "./routes/payments.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -74,6 +76,9 @@ app.use((err, _req, res, _next) => {
     .status(err.status || 500)
     .json({ message: err.message || "Internal server error" });
 });
+
+app.use("/favorites", favoritesRouter);
+app.use("/payments", paymentsRouter);
 
 // Run a local server; on Vercel the exported app is used instead
 if (!process.env.VERCEL) {

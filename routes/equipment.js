@@ -18,12 +18,13 @@ router.get("/featured", async (_req, res) => {
 });
 
 // GET /equipment: All Equipment page, with backend search, filter, sort, pagination
-// ?search=&category=&rentalType=&minPrice=&maxPrice=&availability=&sort=&page=&limit=
+// ?search=&category=&location=&rentalType=&minPrice=&maxPrice=&availability=&sort=&page=&limit=
 router.get("/", async (req, res) => {
   const { equipment } = await getCollections();
   const {
     search = "",
     category,
+    location,
     rentalType,
     minPrice,
     maxPrice,
@@ -41,8 +42,12 @@ router.get("/", async (req, res) => {
     filter.$or = [{ name: rx }, { location: rx }, { category: rx }];
   }
   if (category && category !== "all") filter.category = String(category);
-  if (rentalType && rentalType !== "all")
+  if (location && location !== "all" && String(location).trim()) {
+    filter.location = new RegExp(escapeRegex(String(location).trim()), "i");
+  }
+  if (rentalType && rentalType !== "all") {
     filter.rentalType = String(rentalType);
+  }
 
   const price = {};
   if (

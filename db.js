@@ -32,7 +32,7 @@ export async function getCollections() {
   return {
     users: db.collection("users"),
     equipment: db.collection("equipment"),
-    bookings: db.collection("bookings"),
+    rentals: db.collection("rentals"),
     payments: db.collection("payments"),
     favorites: db.collection("favorites"),
   };
