@@ -272,4 +272,225 @@ router.get("/rentals", verifyToken, verifyAdmin, async (_req, res) => {
   }
 });
 
+// GET /admin/analytics — Platform-wide KPIs, monthly trends & category breakdown
+router.get("/analytics", verifyToken, verifyAdmin, async (_req, res) => {
+  try {
+    const collections = await getCollections();
+    const usersCol = (await resolveUsersCol()) || collections.users;
+    const equipmentCol = collections.equipment;
+    const rentalsCol = collections.rentals;
+    const paymentsCol =
+      collections.payments ||
+      (collections.db ? collections.db.collection("payments") : null);
+
+    const [allUsers, allEquipment, allRentals, allPayments] = await Promise.all(
+      [
+        usersCol ? usersCol.find({}).toArray() : [],
+        equipmentCol ? equipmentCol.find({}).toArray() : [],
+        rentalsCol ? rentalsCol.find({}).toArray() : [],
+        paymentsCol ? paymentsCol.find({}).toArray() : [],
+      ],
+    );
+
+    const equipById = new Map();
+    const equipByName = new Map();
+    for (const eq of allEquipment) {
+      if (eq._id) equipById.set(String(eq._id), eq);
+      const eqLabel = eq.name || eq.title || eq.equipmentName;
+      if (eqLabel) {
+        equipByName.set(String(eqLabel).toLowerCase().trim(), eq);
+      }
+    }
+
+    const getRentalAmount = (r) => {
+      const candidates = [
+        r.totalAmount,
+        r.amount,
+        r.bookingAmount,
+        r.rentalAmount,
+        r.totalPrice,
+        r.price,
+      ];
+      for (const val of candidates) {
+        const num = Number(val);
+        if (Number.isFinite(num) && num > 0) return num;
+      }
+      return 0;
+    };
+
+    const getRentalCategory = (r) => {
+      const eqId = String(r.equipmentId || r.itemId || r.productId || "");
+      const eqName = String(
+        r.equipmentName || r.equipmentTitle || r.itemName || r.name || "",
+      )
+        .toLowerCase()
+        .trim();
+      const matchedEq =
+        (eqId && equipById.get(eqId)) || (eqName && equipByName.get(eqName));
+
+      const cat =
+        r.category ||
+        r.equipmentCategory ||
+        r.categoryName ||
+        r.equipment?.category ||
+        matchedEq?.category ||
+        matchedEq?.categoryName ||
+        "General Equipment";
+
+      return String(cat).trim() || "General Equipment";
+    };
+
+    const totalUsers = allUsers.length;
+    const totalEquipment = allEquipment.length;
+    const totalBookings = allRentals.length;
+
+    const pendingApprovals = allEquipment.filter(
+      (item) => String(item.status || "").toLowerCase() === "pending",
+    ).length;
+
+    const completedRentals = allRentals.filter((r) =>
+      ["completed", "returned", "delivered"].includes(
+        String(r.status || r.bookingStatus || "").toLowerCase(),
+      ),
+    ).length;
+
+    const paidRentals = allRentals.filter((r) =>
+      ["paid", "succeeded", "completed"].includes(
+        String(r.paymentStatus || "").toLowerCase(),
+      ),
+    );
+
+    const paymentsSum = allPayments.reduce(
+      (sum, p) => sum + Number(p.amount ?? p.totalAmount ?? 0),
+      0,
+    );
+    const rentalsSum =
+      paidRentals.length > 0
+        ? paidRentals.reduce((sum, r) => sum + getRentalAmount(r), 0)
+        : allRentals.reduce((sum, r) => sum + getRentalAmount(r), 0);
+    const totalRevenue = paymentsSum > 0 ? paymentsSum : rentalsSum;
+
+    // Build last 12 months buckets
+    const monthNames = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    const now = new Date();
+    const buckets = Array.from({ length: 12 }, (_, idx) => {
+      const d = new Date(now.getFullYear(), now.getMonth() - (11 - idx), 1);
+      return {
+        year: d.getFullYear(),
+        monthIdx: d.getMonth(),
+        month: monthNames[d.getMonth()],
+        primary: 0,
+        secondary: 0,
+        completed: 0,
+        active: 0,
+        pending: 0,
+        categoryTotals: new Map(),
+      };
+    });
+
+    const findBucket = (dateVal) => {
+      if (!dateVal) return buckets[buckets.length - 1];
+      const dt = new Date(dateVal);
+      if (Number.isNaN(dt.getTime())) return buckets[buckets.length - 1];
+      return (
+        buckets.find(
+          (b) => b.year === dt.getFullYear() && b.monthIdx === dt.getMonth(),
+        ) || buckets[buckets.length - 1]
+      );
+    };
+
+    const overallCategoryMap = new Map();
+
+    for (const r of allRentals) {
+      const bucket = findBucket(
+        r.createdAt || r.bookingDate || r.startDate || r.updatedAt,
+      );
+      const status = String(r.status || r.bookingStatus || "").toLowerCase();
+      const paymentStatus = String(r.paymentStatus || "").toLowerCase();
+      const amount = getRentalAmount(r);
+      const category = getRentalCategory(r);
+
+      if (["completed", "returned", "delivered"].includes(status)) {
+        bucket.completed += 1;
+        bucket.primary += amount;
+      } else if (status === "pending") {
+        bucket.pending += 1;
+        bucket.secondary += amount;
+      } else {
+        bucket.active += 1;
+        if (paymentStatus === "paid" || status === "confirmed") {
+          bucket.primary += amount;
+        } else {
+          bucket.secondary += amount;
+        }
+      }
+
+      bucket.categoryTotals.set(
+        category,
+        (bucket.categoryTotals.get(category) || 0) + amount,
+      );
+      overallCategoryMap.set(
+        category,
+        (overallCategoryMap.get(category) || 0) + amount,
+      );
+    }
+
+    const latestBucket = buckets[buckets.length - 1];
+    const latestCatSlices = Array.from(latestBucket.categoryTotals.entries())
+      .map(([label, value]) => ({ label, value }))
+      .filter((item) => item.value > 0)
+      .sort((a, b) => b.value - a.value);
+
+    const overallCatSlices = Array.from(overallCategoryMap.entries())
+      .map(([label, value]) => ({ label, value }))
+      .sort((a, b) => b.value - a.value)
+      .slice(0, 5);
+
+    const breakdown =
+      latestCatSlices.length > 0
+        ? latestCatSlices.slice(0, 5)
+        : overallCatSlices;
+
+    res.json({
+      kpis: {
+        totalUsers,
+        totalEquipment,
+        totalBookings,
+        pendingApprovals,
+        completedRentals,
+        totalRevenue,
+      },
+      monthly: buckets.map(
+        ({ month, primary, secondary, completed, active, pending }) => ({
+          month,
+          primary,
+          secondary,
+          completed,
+          active,
+          pending,
+        }),
+      ),
+      breakdown,
+    });
+  } catch (err) {
+    console.error("Failed to load admin analytics:", err);
+    res
+      .status(500)
+      .json({ message: err.message || "Failed to load admin analytics" });
+  }
+});
+
 export default router;

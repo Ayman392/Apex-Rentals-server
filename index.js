@@ -9,6 +9,7 @@ import equipmentRouter from "./routes/equipment.js";
 import favoritesRouter from "./routes/favorites.js";
 import paymentsRouter from "./routes/payments.js";
 import rentalsRouter from "./routes/rentals.js";
+import ownerRouter from "./routes/owner.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -116,6 +117,7 @@ app.use("/equipment", equipmentRouter);
 app.use("/favorites", favoritesRouter);
 app.use("/payments", paymentsRouter);
 app.use("/rentals", rentalsRouter);
+app.use("/owner", ownerRouter);
 
 // Unknown routes (must stay after all routes)
 app.use((req, res) => {
