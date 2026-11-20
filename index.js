@@ -7,6 +7,7 @@ import { verifyToken } from "./Middleware/auth.js";
 import equipmentRouter from "./routes/equipment.js";
 import favoritesRouter from "./routes/favorites.js";
 import paymentsRouter from "./routes/payments.js";
+import rentalsRouter from "./routes/rentals.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -112,6 +113,7 @@ app.get("/health", async (_req, res) => {
 app.use("/equipment", equipmentRouter);
 app.use("/favorites", favoritesRouter);
 app.use("/payments", paymentsRouter);
+app.use("/rentals", rentalsRouter);
 
 // Unknown routes (must stay after all routes)
 app.use((req, res) => {
