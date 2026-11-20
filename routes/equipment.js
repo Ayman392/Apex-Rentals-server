@@ -97,6 +97,188 @@ router.get("/", async (req, res) => {
   });
 });
 
+import { verifyToken, verifyOwner } from "../Middleware/auth.js";
+
+// GET /equipment/my — Listings belonging to the signed-in owner
+router.get("/my", verifyToken, verifyOwner, async (req, res) => {
+  try {
+    const email = req.decoded.email;
+    const { equipment } = await getCollections();
+
+    const items = await equipment
+      .find({
+        $or: [
+          { ownerEmail: email },
+          { createdByEmail: email },
+          { "owner.email": email },
+        ],
+      })
+      .sort({ createdAt: -1 })
+      .toArray();
+
+    res.json({ equipment: items });
+  } catch (err) {
+    console.error("Failed to fetch owner equipment:", err);
+    res.status(500).json({ message: "Failed to load your equipment" });
+  }
+});
+
+// POST /equipment — Create new equipment listing
+router.post("/", verifyToken, verifyOwner, async (req, res) => {
+  try {
+    const {
+      name,
+      category,
+      location,
+      rentalType = "Daily",
+      price,
+      totalQuantity = 1,
+      availableQuantity,
+      image = "",
+      description = "",
+    } = req.body;
+
+    if (!name?.trim() || !category?.trim() || price === undefined) {
+      return res
+        .status(400)
+        .json({ message: "Name, category, and price are required" });
+    }
+
+    const numericPrice = Number(price);
+    const totalQty = Math.max(Number(totalQuantity) || 1, 1);
+    const availQty =
+      availableQuantity !== undefined
+        ? Math.max(Number(availableQuantity) || 0, 0)
+        : totalQty;
+
+    const { equipment } = await getCollections();
+    const doc = {
+      name: String(name).trim(),
+      category: String(category).trim(),
+      location: String(location || "").trim(),
+      rentalType: String(rentalType || "Daily"),
+      price: numericPrice,
+      totalQuantity: totalQty,
+      availableQuantity: availQty,
+      image: String(image || "").trim(),
+      description: String(description || "").trim(),
+      status: "approved",
+      ownerEmail: req.decoded.email,
+      ownerName: req.user?.name || req.decoded.name || "",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
+
+    const result = await equipment.insertOne(doc);
+    res.status(201).json({
+      equipment: { ...doc, _id: result.insertedId },
+    });
+  } catch (err) {
+    console.error("Failed to create equipment:", err);
+    res.status(500).json({ message: "Failed to create equipment" });
+  }
+});
+
+// PATCH /equipment/:id — Update an owner's listing
+router.patch("/:id", verifyToken, verifyOwner, async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    return res.status(400).json({ message: "Invalid equipment id" });
+  }
+
+  try {
+    const { equipment } = await getCollections();
+    const _id = new ObjectId(req.params.id);
+    const existing = await equipment.findOne({ _id });
+
+    if (!existing) {
+      return res.status(404).json({ message: "Equipment not found" });
+    }
+
+    const ownerMatch =
+      existing.ownerEmail === req.decoded.email ||
+      existing.createdByEmail === req.decoded.email ||
+      existing.owner?.email === req.decoded.email ||
+      String(req.user?.role || "").toLowerCase() === "admin";
+
+    if (!ownerMatch) {
+      return res
+        .status(403)
+        .json({ message: "Forbidden: you do not own this listing" });
+    }
+
+    const allowed = [
+      "name",
+      "category",
+      "location",
+      "rentalType",
+      "price",
+      "totalQuantity",
+      "availableQuantity",
+      "image",
+      "description",
+    ];
+    const updates = { updatedAt: new Date() };
+
+    for (const key of allowed) {
+      if (req.body[key] !== undefined) {
+        if (
+          key === "price" ||
+          key === "totalQuantity" ||
+          key === "availableQuantity"
+        ) {
+          updates[key] = Number(req.body[key]);
+        } else if (typeof req.body[key] === "string") {
+          updates[key] = req.body[key].trim();
+        } else {
+          updates[key] = req.body[key];
+        }
+      }
+    }
+
+    await equipment.updateOne({ _id }, { $set: updates });
+    const updated = await equipment.findOne({ _id });
+    res.json({ equipment: updated });
+  } catch (err) {
+    console.error("Failed to update equipment:", err);
+    res.status(500).json({ message: "Failed to update equipment" });
+  }
+});
+
+// DELETE /equipment/:id — Delete an owner's listing
+router.delete("/:id", verifyToken, verifyOwner, async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    return res.status(400).json({ message: "Invalid equipment id" });
+  }
+
+  try {
+    const { equipment } = await getCollections();
+    const _id = new ObjectId(req.params.id);
+    const existing = await equipment.findOne({ _id });
+
+    if (!existing) {
+      return res.status(404).json({ message: "Equipment not found" });
+    }
+
+    const ownerMatch =
+      existing.ownerEmail === req.decoded.email ||
+      existing.createdByEmail === req.decoded.email ||
+      existing.owner?.email === req.decoded.email ||
+      String(req.user?.role || "").toLowerCase() === "admin";
+
+    if (!ownerMatch) {
+      return res
+        .status(403)
+        .json({ message: "Forbidden: you do not own this listing" });
+    }
+
+    await equipment.deleteOne({ _id });
+    res.json({ message: "Equipment deleted", id: req.params.id });
+  } catch (err) {
+    console.error("Failed to delete equipment:", err);
+    res.status(500).json({ message: "Failed to delete equipment" });
+  }
+});
+
 // GET /equipment/:id: details of one approved item
 router.get("/:id", async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
