@@ -41,11 +41,59 @@ app.get("/auth/me", verifyToken, async (req, res) => {
   const { users } = await getCollections();
   const user = await users.findOne(
     { email: req.decoded.email },
-    { projection: { name: 1, email: 1, image: 1, role: 1, createdAt: 1 } },
+    {
+      projection: {
+        name: 1,
+        email: 1,
+        image: 1,
+        role: 1,
+        phone: 1,
+        address: 1,
+        createdAt: 1,
+      },
+    },
   );
 
   if (!user) return res.status(404).json({ message: "User not found" });
   res.json({ user });
+});
+
+app.patch("/auth/profile", verifyToken, async (req, res) => {
+  try {
+    const { name, image, phone, address } = req.body;
+    const updateDoc = {
+      updatedAt: new Date(),
+    };
+
+    if (typeof name === "string" && name.trim()) updateDoc.name = name.trim();
+    if (typeof image === "string") updateDoc.image = image.trim();
+    if (typeof phone === "string") updateDoc.phone = phone.trim();
+    if (typeof address === "string") updateDoc.address = address.trim();
+
+    const { users } = await getCollections();
+    const result = await users.findOneAndUpdate(
+      { email: req.decoded.email },
+      { $set: updateDoc },
+      {
+        returnDocument: "after",
+        projection: {
+          name: 1,
+          email: 1,
+          image: 1,
+          role: 1,
+          phone: 1,
+          address: 1,
+          createdAt: 1,
+        },
+      },
+    );
+
+    if (!result) return res.status(404).json({ message: "User not found" });
+    res.json({ user: result });
+  } catch (err) {
+    console.error("Profile update failed:", err);
+    res.status(500).json({ message: "Failed to update profile" });
+  }
 });
 
 // Health check: also confirms the database is reachable

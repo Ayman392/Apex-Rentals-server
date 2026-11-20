@@ -30,7 +30,7 @@ export function getDb() {
 export async function getCollections() {
   const db = await getDb();
   return {
-    users: db.collection("users"),
+    users: db.collection("user"),
     equipment: db.collection("equipment"),
     rentals: db.collection("rentals"),
     payments: db.collection("payments"),
