@@ -2,6 +2,7 @@ import { Router } from "express";
 import { ObjectId } from "mongodb";
 import Stripe from "stripe";
 import { getCollections } from "../db.js";
+import { verifyToken, verifyRenter } from "../middleware/auth.js";
 
 const router = Router();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
@@ -25,95 +26,105 @@ function computeEndDate(startDateStr, rentalType, durationCount) {
 }
 
 // POST /payments/create-checkout-session
-router.post("/create-checkout-session", async (req, res) => {
-  try {
-    const {
-      equipmentId,
-      startDate,
-      endDate,
-      duration,
-      quantity,
-      contactNumber,
-      deliveryAddress,
-      additionalNotes,
-      customerEmail,
-      customerName,
-    } = req.body;
+router.post(
+  "/create-checkout-session",
+  verifyToken,
+  verifyRenter,
+  async (req, res) => {
+    try {
+      const {
+        equipmentId,
+        startDate,
+        endDate,
+        duration,
+        quantity,
+        contactNumber,
+        deliveryAddress,
+        additionalNotes,
+        customerName,
+      } = req.body;
 
-    if (!equipmentId || !ObjectId.isValid(equipmentId) || !customerEmail) {
-      return res
-        .status(400)
-        .json({ message: "Missing required booking fields" });
-    }
+      const customerEmail = req.decoded.email;
+      const resolvedCustomerName =
+        req.user?.name || customerName || req.decoded.name || "";
 
-    const dur = Math.max(1, Number(duration) || 1);
-    const qty = Math.max(1, Number(quantity) || 1);
+      if (!equipmentId || !ObjectId.isValid(equipmentId) || !customerEmail) {
+        return res
+          .status(400)
+          .json({ message: "Missing required booking fields" });
+      }
 
-    const { equipment } = await getCollections();
-    const item = await equipment.findOne({
-      _id: new ObjectId(equipmentId),
-      status: "approved",
-    });
+      const dur = Math.max(1, Number(duration) || 1);
+      const qty = Math.max(1, Number(quantity) || 1);
 
-    if (!item) {
-      return res.status(404).json({ message: "Equipment not found" });
-    }
-    if (item.availableQuantity < qty) {
-      return res
-        .status(400)
-        .json({ message: `Only ${item.availableQuantity} units available` });
-    }
+      const { equipment } = await getCollections();
+      const item = await equipment.findOne({
+        _id: new ObjectId(equipmentId),
+        status: "approved",
+      });
 
-    // Always compute total on the server
-    const totalPrice = Number(item.price) * dur * qty;
-    const resolvedEndDate =
-      String(endDate || "").trim() ||
-      computeEndDate(startDate, item.rentalType, dur);
+      if (!item) {
+        return res.status(404).json({ message: "Equipment not found" });
+      }
+      if (item.availableQuantity < qty) {
+        return res
+          .status(400)
+          .json({ message: `Only ${item.availableQuantity} units available` });
+      }
 
-    const session = await stripe.checkout.sessions.create({
-      mode: "payment",
-      customer_email: customerEmail,
-      line_items: [
-        {
-          price_data: {
-            currency: "usd",
-            product_data: {
-              name: item.name,
-              description: `${qty} unit(s) × ${dur} ${item.rentalType} (${startDate} to ${resolvedEndDate})`,
+      // Always compute total on the server
+      const totalPrice = Number(item.price) * dur * qty;
+      const resolvedEndDate =
+        String(endDate || "").trim() ||
+        computeEndDate(startDate, item.rentalType, dur);
+
+      const session = await stripe.checkout.sessions.create({
+        mode: "payment",
+        customer_email: customerEmail,
+        line_items: [
+          {
+            price_data: {
+              currency: "usd",
+              product_data: {
+                name: item.name,
+                description: `${qty} unit(s) × ${dur} ${item.rentalType} (${startDate} to ${resolvedEndDate})`,
+              },
+              unit_amount: Math.round(totalPrice * 100),
             },
-            unit_amount: Math.round(totalPrice * 100),
+            quantity: 1,
           },
-          quantity: 1,
+        ],
+        metadata: {
+          equipmentId: item._id.toString(),
+          equipmentName: String(item.name || "").slice(0, 200),
+          ownerEmail: String(item.ownerEmail || "").slice(0, 150),
+          rentalType: String(item.rentalType || ""),
+          startDate: String(startDate || ""),
+          endDate: resolvedEndDate,
+          duration: String(dur),
+          quantity: String(qty),
+          contactNumber: String(contactNumber || "").slice(0, 100),
+          deliveryAddress: String(deliveryAddress || "").slice(0, 300),
+          additionalNotes: String(additionalNotes || "").slice(0, 450),
+          totalPrice: String(totalPrice),
+          customerEmail: String(customerEmail).slice(0, 150),
+          customerName: String(resolvedCustomerName).slice(0, 150),
         },
-      ],
-      metadata: {
-        equipmentId: item._id.toString(),
-        equipmentName: String(item.name || "").slice(0, 200),
-        ownerEmail: String(item.ownerEmail || "").slice(0, 150),
-        rentalType: String(item.rentalType || ""),
-        startDate: String(startDate || ""),
-        endDate: resolvedEndDate,
-        duration: String(dur),
-        quantity: String(qty),
-        contactNumber: String(contactNumber || "").slice(0, 100),
-        deliveryAddress: String(deliveryAddress || "").slice(0, 300),
-        additionalNotes: String(additionalNotes || "").slice(0, 450),
-        totalPrice: String(totalPrice),
-        customerEmail: String(customerEmail).slice(0, 150),
-        customerName: String(customerName || "").slice(0, 150),
-      },
-      success_url: `${CLIENT_URL}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${CLIENT_URL}/equipment/${item.slug || item._id}`,
-    });
+        success_url: `${CLIENT_URL}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${CLIENT_URL}/equipment/${item.slug || item._id}`,
+      });
 
-    res.json({ url: session.url, sessionId: session.id });
-  } catch (err) {
-    res.status(500).json({ message: err.message || "Stripe checkout failed" });
-  }
-});
+      res.json({ url: session.url, sessionId: session.id });
+    } catch (err) {
+      res
+        .status(500)
+        .json({ message: err.message || "Stripe checkout failed" });
+    }
+  },
+);
 
 // POST /payments/confirm: verify Stripe session, record payment + rental, update stock
-router.post("/confirm", async (req, res) => {
+router.post("/confirm", verifyToken, async (req, res) => {
   try {
     const { sessionId } = req.body;
     if (!sessionId) {
@@ -125,6 +136,12 @@ router.post("/confirm", async (req, res) => {
       return res
         .status(400)
         .json({ message: "Payment has not been completed" });
+    }
+
+    if (session.metadata?.customerEmail !== req.decoded.email) {
+      return res.status(403).json({
+        message: "Forbidden: payment session does not belong to this user",
+      });
     }
 
     const { payments, rentals, equipment } = await getCollections();
