@@ -1,12 +1,12 @@
 import express from "express";
 import { ObjectId } from "mongodb";
 import { getCollections } from "../db.js";
-import { verifyToken, verifyOwner } from "../middleware/auth.js";
+import { verifyToken, verifyRenter, verifyOwner } from "../middleware/auth.js";
 
 const router = express.Router();
 
 // GET /rentals/my — Logged-in customer's rental bookings
-router.get("/my", verifyToken, async (req, res) => {
+router.get("/my", verifyToken, verifyRenter, async (req, res) => {
   try {
     const email = req.decoded.email;
     const { rentals } = await getCollections();
@@ -67,7 +67,7 @@ router.get("/owner", verifyToken, verifyOwner, async (req, res) => {
   }
 });
 
-// PATCH /rentals/:id/status — Update booking status
+// PATCH /rentals/:id/status — Update booking status (owner of the rental's equipment only)
 router.patch("/:id/status", verifyToken, verifyOwner, async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
     return res.status(400).json({ message: "Invalid rental id" });
@@ -88,9 +88,35 @@ router.patch("/:id/status", verifyToken, verifyOwner, async (req, res) => {
   }
 
   try {
-    const { rentals } = await getCollections();
+    const { rentals, equipment } = await getCollections();
     const _id = new ObjectId(req.params.id);
-    const result = await rentals.updateOne(
+    const existing = await rentals.findOne({ _id });
+
+    if (!existing) {
+      return res.status(404).json({ message: "Rental not found" });
+    }
+
+    let isOwnerOfRental = existing.ownerEmail === req.decoded.email;
+    if (!isOwnerOfRental && existing.equipmentId) {
+      const eqFilter = ObjectId.isValid(existing.equipmentId)
+        ? { _id: new ObjectId(String(existing.equipmentId)) }
+        : { _id: existing.equipmentId };
+      const linkedEq = await equipment.findOne(eqFilter);
+      if (linkedEq) {
+        isOwnerOfRental =
+          linkedEq.ownerEmail === req.decoded.email ||
+          linkedEq.createdByEmail === req.decoded.email ||
+          linkedEq.owner?.email === req.decoded.email;
+      }
+    }
+
+    if (!isOwnerOfRental) {
+      return res
+        .status(403)
+        .json({ message: "Forbidden: you do not own this rental's equipment" });
+    }
+
+    await rentals.updateOne(
       { _id },
       {
         $set: {
@@ -100,10 +126,6 @@ router.patch("/:id/status", verifyToken, verifyOwner, async (req, res) => {
         },
       },
     );
-
-    if (result.matchedCount === 0) {
-      return res.status(404).json({ message: "Rental not found" });
-    }
 
     const updated = await rentals.findOne({ _id });
     res.json({ rental: updated });
