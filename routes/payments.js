@@ -7,14 +7,35 @@ const router = Router();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:3000";
 
+function computeEndDate(startDateStr, rentalType, durationCount) {
+  const [y, m, d] = String(startDateStr || "")
+    .split("-")
+    .map(Number);
+  if (!y || !m || !d) return "";
+
+  const date = new Date(Date.UTC(y, m - 1, d));
+  if (rentalType === "Weekly") {
+    date.setUTCDate(date.getUTCDate() + durationCount * 7);
+  } else if (rentalType === "Monthly") {
+    date.setUTCMonth(date.getUTCMonth() + durationCount);
+  } else {
+    date.setUTCDate(date.getUTCDate() + durationCount);
+  }
+  return date.toISOString().split("T")[0];
+}
+
 // POST /payments/create-checkout-session
 router.post("/create-checkout-session", async (req, res) => {
   try {
     const {
       equipmentId,
       startDate,
+      endDate,
       duration,
       quantity,
+      contactNumber,
+      deliveryAddress,
+      additionalNotes,
       customerEmail,
       customerName,
     } = req.body;
@@ -45,6 +66,9 @@ router.post("/create-checkout-session", async (req, res) => {
 
     // Always compute total on the server
     const totalPrice = Number(item.price) * dur * qty;
+    const resolvedEndDate =
+      String(endDate || "").trim() ||
+      computeEndDate(startDate, item.rentalType, dur);
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
@@ -55,7 +79,7 @@ router.post("/create-checkout-session", async (req, res) => {
             currency: "usd",
             product_data: {
               name: item.name,
-              description: `${qty} unit(s) × ${dur} ${item.rentalType} starting ${startDate}`,
+              description: `${qty} unit(s) × ${dur} ${item.rentalType} (${startDate} to ${resolvedEndDate})`,
             },
             unit_amount: Math.round(totalPrice * 100),
           },
@@ -64,18 +88,22 @@ router.post("/create-checkout-session", async (req, res) => {
       ],
       metadata: {
         equipmentId: item._id.toString(),
-        equipmentName: item.name,
-        ownerEmail: item.ownerEmail || "",
-        rentalType: item.rentalType,
+        equipmentName: String(item.name || "").slice(0, 200),
+        ownerEmail: String(item.ownerEmail || "").slice(0, 150),
+        rentalType: String(item.rentalType || ""),
         startDate: String(startDate || ""),
+        endDate: resolvedEndDate,
         duration: String(dur),
         quantity: String(qty),
+        contactNumber: String(contactNumber || "").slice(0, 100),
+        deliveryAddress: String(deliveryAddress || "").slice(0, 300),
+        additionalNotes: String(additionalNotes || "").slice(0, 450),
         totalPrice: String(totalPrice),
-        customerEmail,
-        customerName: customerName || "",
+        customerEmail: String(customerEmail).slice(0, 150),
+        customerName: String(customerName || "").slice(0, 150),
       },
       success_url: `${CLIENT_URL}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${CLIENT_URL}/equipment/${item._id}`,
+      cancel_url: `${CLIENT_URL}/equipment/${item.slug || item._id}`,
     });
 
     res.json({ url: session.url, sessionId: session.id });
@@ -114,6 +142,7 @@ router.post("/confirm", async (req, res) => {
     const qty = Number(m.quantity);
     const dur = Number(m.duration);
     const totalPrice = Number(m.totalPrice);
+    const now = new Date();
 
     const rentalDoc = {
       equipmentId: eqObjectId,
@@ -122,14 +151,22 @@ router.post("/confirm", async (req, res) => {
       customerEmail: m.customerEmail,
       customerName: m.customerName,
       startDate: m.startDate,
+      endDate: m.endDate || computeEndDate(m.startDate, m.rentalType, dur),
       duration: dur,
       rentalType: m.rentalType,
       quantity: qty,
+      contactNumber: m.contactNumber || "",
+      deliveryAddress: m.deliveryAddress || "",
+      additionalNotes: m.additionalNotes || "",
       totalPrice,
+      totalAmount: totalPrice,
       paymentStatus: "paid",
       rentalStatus: "confirmed",
+      bookingStatus: "Confirmed",
+      status: "Confirmed",
       stripeSessionId: session.id,
-      createdAt: new Date(),
+      bookingDate: now,
+      createdAt: now,
     };
 
     const rentalResult = await rentals.insertOne(rentalDoc);
@@ -145,7 +182,7 @@ router.post("/confirm", async (req, res) => {
       transactionId: session.payment_intent,
       stripeSessionId: session.id,
       status: "paid",
-      paidAt: new Date(),
+      paidAt: now,
     };
 
     await payments.insertOne(paymentDoc);
