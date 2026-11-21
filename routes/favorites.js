@@ -1,17 +1,18 @@
 import { Router } from "express";
 import { ObjectId } from "mongodb";
 import { getCollections } from "../db.js";
+import { verifyToken, verifyRenter } from "../middleware/auth.js";
 
 const router = Router();
 
-// POST /favorites: add equipment to user's favorites
-router.post("/", async (req, res) => {
+// POST /favorites: add equipment to authenticated customer's favorites
+router.post("/", verifyToken, verifyRenter, async (req, res) => {
   try {
-    const { equipmentId, userEmail } = req.body;
-    if (!equipmentId || !userEmail || !ObjectId.isValid(equipmentId)) {
-      return res
-        .status(400)
-        .json({ message: "Invalid equipmentId or userEmail" });
+    const { equipmentId } = req.body;
+    const userEmail = req.decoded.email;
+
+    if (!equipmentId || !ObjectId.isValid(equipmentId)) {
+      return res.status(400).json({ message: "Invalid equipmentId" });
     }
 
     const { favorites } = await getCollections();
@@ -39,15 +40,10 @@ router.post("/", async (req, res) => {
   }
 });
 
-// GET /favorites?email=user@example.com: list user's favorites with equipment info
-router.get("/", async (req, res) => {
+// GET /favorites: list authenticated customer's favorites with equipment info
+router.get("/", verifyToken, verifyRenter, async (req, res) => {
   try {
-    const email = String(req.query.email || "").trim();
-    if (!email) {
-      return res
-        .status(400)
-        .json({ message: "Email query parameter is required" });
-    }
+    const email = req.decoded.email;
 
     const { favorites } = await getCollections();
     const items = await favorites
@@ -74,16 +70,19 @@ router.get("/", async (req, res) => {
   }
 });
 
-// DELETE /favorites/:id: remove a favorite by its document _id
-router.delete("/:id", async (req, res) => {
+// DELETE /favorites/:id: remove a favorite belonging to the authenticated customer
+router.delete("/:id", verifyToken, verifyRenter, async (req, res) => {
   try {
     if (!ObjectId.isValid(req.params.id)) {
       return res.status(400).json({ message: "Invalid favorite id" });
     }
+
     const { favorites } = await getCollections();
     const result = await favorites.deleteOne({
       _id: new ObjectId(req.params.id),
+      userEmail: req.decoded.email,
     });
+
     if (result.deletedCount === 0) {
       return res.status(404).json({ message: "Favorite not found" });
     }
