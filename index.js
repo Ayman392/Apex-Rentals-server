@@ -4,12 +4,15 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import { getCollections, getDb } from "./db.js";
 import { verifyToken } from "./middleware/auth.js";
+import { completeExpiredRentals } from "./services/rentalCompletion.js";
 import adminRouter from "./routes/admin.js";
 import equipmentRouter from "./routes/equipment.js";
 import favoritesRouter from "./routes/favorites.js";
 import paymentsRouter from "./routes/payments.js";
 import rentalsRouter from "./routes/rentals.js";
 import ownerRouter from "./routes/owner.js";
+import cron from "node-cron";
+import cronRouter from "./routes/cron.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -35,6 +38,7 @@ app.use(
 
 app.use(express.json());
 app.use(cookieParser());
+app.use("/cron", cronRouter);
 
 app.get("/", (_req, res) => {
   res.json({ name: "Apex Rentals API", status: "running" });
@@ -141,6 +145,16 @@ if (!process.env.VERCEL) {
     getDb()
       .then(() => console.log("MongoDB connected"))
       .catch((err) => console.error("MongoDB connection failed:", err.message));
+
+    // Every day at 02:00: complete rentals whose end date has passed
+    cron.schedule("0 2 * * *", async () => {
+      try {
+        const result = await completeExpiredRentals();
+        console.log("Rental completion job:", result);
+      } catch (err) {
+        console.error("Rental completion job failed:", err.message);
+      }
+    });
   });
 }
 

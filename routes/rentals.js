@@ -2,6 +2,7 @@ import express from "express";
 import { ObjectId } from "mongodb";
 import { getCollections } from "../db.js";
 import { verifyToken, verifyRenter, verifyOwner } from "../middleware/auth.js";
+import { markRentalCompleted } from "../services/rentalCompletion.js";
 
 const router = express.Router();
 
@@ -114,6 +115,22 @@ router.patch("/:id/status", verifyToken, verifyOwner, async (req, res) => {
       return res
         .status(403)
         .json({ message: "Forbidden: you do not own this rental's equipment" });
+    }
+
+    if (nextStatus === "Completed") {
+      // Already completed: nothing to do, and no duplicate emails
+      if (existing.bookingStatus === "Completed") {
+        return res.json({ rental: existing });
+      }
+
+      // Shared logic: sets Completed, restores stock, emails both people
+      const completed = await markRentalCompleted(_id);
+      if (!completed) {
+        return res
+          .status(409)
+          .json({ message: "This booking can no longer be completed" });
+      }
+      return res.json({ rental: completed });
     }
 
     await rentals.updateOne(

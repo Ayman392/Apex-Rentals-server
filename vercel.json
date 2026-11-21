@@ -1,0 +1,8 @@
+{
+    "crons": [
+        {
+            "path": "/cron/complete-rentals",
+            "schedule": "0 2 * * *"
+        }
+    ]
+}
