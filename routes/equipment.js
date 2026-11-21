@@ -1,10 +1,19 @@
 import { Router } from "express";
 import { ObjectId } from "mongodb";
 import { getCollections } from "../db.js";
+import { verifyToken, verifyOwner } from "../middleware/auth.js";
 
 const router = Router();
 
 const escapeRegex = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+function toSlug(text = "") {
+  return String(text)
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
 
 // GET /equipment/featured: 6 approved items (Home page)
 router.get("/featured", async (_req, res) => {
@@ -97,8 +106,6 @@ router.get("/", async (req, res) => {
   });
 });
 
-import { verifyToken, verifyOwner } from "../middleware/auth.js";
-
 // GET /equipment/my — Listings belonging to the signed-in owner
 router.get("/my", verifyToken, verifyOwner, async (req, res) => {
   try {
@@ -123,6 +130,43 @@ router.get("/my", verifyToken, verifyOwner, async (req, res) => {
   }
 });
 
+// GET /equipment/slug/:slug: details of one approved item by slug (must be before /:id)
+router.get("/slug/:slug", async (req, res) => {
+  try {
+    const requestedSlug = toSlug(decodeURIComponent(req.params.slug || ""));
+    if (!requestedSlug) {
+      return res.status(400).json({ message: "Invalid equipment slug" });
+    }
+
+    const { equipment } = await getCollections();
+
+    // 1. Direct lookup if slug field is stored
+    let item = await equipment.findOne({
+      slug: requestedSlug,
+      status: "approved",
+    });
+
+    // 2. Fallback: match slugified name across approved documents
+    if (!item) {
+      const approvedItems = await equipment
+        .find({ status: "approved" })
+        .toArray();
+      item =
+        approvedItems.find((doc) => toSlug(doc.name || "") === requestedSlug) ||
+        null;
+    }
+
+    if (!item) {
+      return res.status(404).json({ message: "Equipment not found" });
+    }
+
+    return res.json(item);
+  } catch (err) {
+    console.error("Failed to fetch equipment by slug:", err);
+    return res.status(500).json({ message: "Failed to load equipment" });
+  }
+});
+
 // POST /equipment — Create new equipment listing
 router.post("/", verifyToken, verifyOwner, async (req, res) => {
   try {
@@ -144,6 +188,7 @@ router.post("/", verifyToken, verifyOwner, async (req, res) => {
         .json({ message: "Name, category, and price are required" });
     }
 
+    const cleanName = String(name).trim();
     const numericPrice = Number(price);
     const totalQty = Math.max(Number(totalQuantity) || 1, 1);
     const availQty =
@@ -153,7 +198,8 @@ router.post("/", verifyToken, verifyOwner, async (req, res) => {
 
     const { equipment } = await getCollections();
     const doc = {
-      name: String(name).trim(),
+      name: cleanName,
+      slug: toSlug(cleanName),
       category: String(category).trim(),
       location: String(location || "").trim(),
       rentalType: String(rentalType || "Daily"),
@@ -233,6 +279,10 @@ router.patch("/:id", verifyToken, verifyOwner, async (req, res) => {
           updates[key] = req.body[key];
         }
       }
+    }
+
+    if (typeof updates.name === "string" && updates.name) {
+      updates.slug = toSlug(updates.name);
     }
 
     await equipment.updateOne({ _id }, { $set: updates });
