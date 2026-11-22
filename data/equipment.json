@@ -1,7 +1,7 @@
 [
   {
     "name": "CAT 320 Hydraulic Excavator",
-    "description": "20-tonne hydraulic excavator suitable for earthmoving, site preparation, foundation work, and trenching. Operator available on request.",
+    "description": "20-tonne hydraulic excavator suitable for earthmoving, site preparation, foundation work, and trenching. Certified operator available on request.",
     "category": "Construction Equipment",
     "location": "Dhaka",
     "price": 550,
@@ -10,15 +10,15 @@
     "condition": "Excellent",
     "brand": "Caterpillar",
     "model": "320",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Refundable security deposit required. Fuel is not included in the daily rate. Equipment must be returned clean and inspected on site.",
     "status": "approved",
     "ownerName": "Rahim Uddin",
-    "ownerEmail": "owner01@example.com",
-    "createdAt": "2026-11-10T09:00:00.000Z"
+    "ownerEmail": "rahim.uddin@bengalheavy.com",
+    "createdAt": "2026-10-14T08:22:15.000Z"
   },
   {
     "name": "JCB 3DX Backhoe Loader",
-    "description": "Backhoe loader for excavation, loading, road maintenance, and general construction work. Suitable for medium-sized sites.",
+    "description": "Versatile backhoe loader for excavation, loading, road maintenance, and general construction work on medium-sized sites.",
     "category": "Construction Equipment",
     "location": "Gazipur",
     "price": 320,
@@ -27,15 +27,15 @@
     "condition": "Good",
     "brand": "JCB",
     "model": "3DX",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Refundable security deposit required. Operator charges and diesel are billed separately. Late returns incur a pro-rata hourly fee.",
     "status": "approved",
     "ownerName": "Nusrat Jahan",
-    "ownerEmail": "owner02@example.com",
-    "createdAt": "2026-11-11T09:00:00.000Z"
+    "ownerEmail": "nusrat@gazipurplant.com",
+    "createdAt": "2026-10-16T11:45:09.000Z"
   },
   {
     "name": "Komatsu PC130 Excavator",
-    "description": "Crawler excavator designed for digging, drainage work, earthmoving, and construction projects with limited access.",
+    "description": "Crawler excavator designed for digging, drainage work, earthmoving, and urban construction projects with limited site access.",
     "category": "Construction Equipment",
     "location": "Narayanganj",
     "price": 420,
@@ -44,15 +44,15 @@
     "condition": "Excellent",
     "brand": "Komatsu",
     "model": "PC130",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Valid trade license or NID required for heavy machinery bookings. Low-bed transport can be arranged at an additional cost.",
     "status": "approved",
     "ownerName": "Tanvir Ahmed",
-    "ownerEmail": "owner03@example.com",
-    "createdAt": "2026-11-12T09:00:00.000Z"
+    "ownerEmail": "tanvir@narayanganjmachinery.com",
+    "createdAt": "2026-10-18T06:14:33.000Z"
   },
   {
     "name": "Bomag BW 120 Road Roller",
-    "description": "Vibratory tandem roller for compacting asphalt and soil on roads, parking areas, and small construction sites.",
+    "description": "Vibratory tandem roller for compacting asphalt and soil on roads, parking areas, and commercial construction sites.",
     "category": "Construction Equipment",
     "location": "Dhaka",
     "price": 240,
@@ -61,15 +61,15 @@
     "condition": "Good",
     "brand": "BOMAG",
     "model": "BW 120 AD-5",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Refundable deposit required at handover. Renter is responsible for daily water-tank refills and safe overnight site storage.",
     "status": "approved",
     "ownerName": "Sadia Islam",
-    "ownerEmail": "owner04@example.com",
-    "createdAt": "2026-11-13T09:00:00.000Z"
+    "ownerEmail": "sadia.islam@dhakabuildrentals.com",
+    "createdAt": "2026-10-19T14:08:52.000Z"
   },
   {
     "name": "Atlas Copco Portable Air Compressor",
-    "description": "Portable diesel air compressor suitable for pneumatic tools, drilling, and construction-site applications.",
+    "description": "Portable diesel air compressor suitable for pneumatic breakers, drilling, sandblasting, and construction-site applications.",
     "category": "Construction Equipment",
     "location": "Chattogram",
     "price": 165,
@@ -78,11 +78,11 @@
     "condition": "Good",
     "brand": "Atlas Copco",
     "model": "XAS 97",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Supplied with standard air hoses. Renter must return hoses and couplings intact; missing fittings will be deducted from deposit.",
     "status": "approved",
     "ownerName": "Imran Hossain",
-    "ownerEmail": "owner05@example.com",
-    "createdAt": "2026-11-14T09:00:00.000Z"
+    "ownerEmail": "imran@ctgindustrial.com",
+    "createdAt": "2026-10-21T09:37:41.000Z"
   },
   {
     "name": "Mikasa Plate Compactor",
@@ -95,15 +95,15 @@
     "condition": "Excellent",
     "brand": "Mikasa",
     "model": "MVC-F80",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Supplied with a full tank of petrol; please return with a full tank or pay refueling at market rate.",
     "status": "approved",
     "ownerName": "Farhana Akter",
-    "ownerEmail": "owner06@example.com",
-    "createdAt": "2026-11-15T09:00:00.000Z"
+    "ownerEmail": "farhana@cumillatools.com",
+    "createdAt": "2026-10-22T16:19:04.000Z"
   },
   {
     "name": "Lincoln Electric Welding Machine",
-    "description": "Heavy-duty inverter welding machine for fabrication, metal repair, and construction workshop use.",
+    "description": "Heavy-duty inverter welding machine for steel fabrication, metal repair, and construction workshop use.",
     "category": "Construction Equipment",
     "location": "Dhaka",
     "price": 55,
@@ -112,15 +112,15 @@
     "condition": "Good",
     "brand": "Lincoln Electric",
     "model": "Invertec 400TPX",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes electrode holder and earth clamp. Welding rods and safety gear are not included.",
     "status": "approved",
     "ownerName": "Mahmud Hasan",
-    "ownerEmail": "owner07@example.com",
-    "createdAt": "2026-11-16T09:00:00.000Z"
+    "ownerEmail": "mahmud@metroequipbd.com",
+    "createdAt": "2026-10-24T10:52:28.000Z"
   },
   {
     "name": "Genie GS-1930 Scissor Lift",
-    "description": "Electric scissor lift for indoor installation, maintenance, and elevated work on level surfaces.",
+    "description": "Electric scissor lift for indoor installation, warehouse maintenance, and elevated work on level concrete surfaces.",
     "category": "Construction Equipment",
     "location": "Dhaka",
     "price": 145,
@@ -129,15 +129,15 @@
     "condition": "Excellent",
     "brand": "Genie",
     "model": "GS-1930",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Delivered fully charged with onboard charger. Indoor or flat-surface operation only; safety harness recommended.",
     "status": "approved",
     "ownerName": "Rafiq Karim",
-    "ownerEmail": "owner08@example.com",
-    "createdAt": "2026-11-17T09:00:00.000Z"
+    "ownerEmail": "rafiq.karim@apexliftbd.com",
+    "createdAt": "2026-10-25T13:11:47.000Z"
   },
   {
     "name": "Hilti TE 3000-AVR Concrete Breaker",
-    "description": "Heavy-duty electric jackhammer for breaking concrete slabs, foundations, and asphalt with low vibration.",
+    "description": "Heavy-duty electric jackhammer for breaking concrete slabs, foundations, and asphalt with active vibration reduction.",
     "category": "Construction Equipment",
     "location": "Dhaka",
     "price": 75,
@@ -146,15 +146,15 @@
     "condition": "Excellent",
     "brand": "Hilti",
     "model": "TE 3000-AVR",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes two pointed chisels and trolley. Damaged or lost chisel bits are charged separately.",
     "status": "approved",
     "ownerName": "Rahim Uddin",
-    "ownerEmail": "owner01@example.com",
-    "createdAt": "2026-11-19T09:00:00.000Z"
+    "ownerEmail": "rahim.uddin@bengalheavy.com",
+    "createdAt": "2026-11-12T07:40:19.000Z"
   },
   {
     "name": "Honda EU70is Portable Generator",
-    "description": "7kVA silent inverter generator for construction sites, backup power, and outdoor operations.",
+    "description": "7kVA silent inverter generator for construction sites, backup power, and outdoor commercial operations.",
     "category": "Construction Equipment",
     "location": "Chattogram",
     "price": 95,
@@ -163,15 +163,15 @@
     "condition": "Excellent",
     "brand": "Honda",
     "model": "EU70is",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Use unleaded petrol only. Do not exceed rated load capacity; overload damage is chargeable to the renter.",
     "status": "approved",
     "ownerName": "Imran Hossain",
-    "ownerEmail": "owner05@example.com",
-    "createdAt": "2026-11-19T10:00:00.000Z"
+    "ownerEmail": "imran@ctgindustrial.com",
+    "createdAt": "2026-11-14T15:28:03.000Z"
   },
   {
     "name": "Canon EOS R6 Mark II Camera",
-    "description": "Full-frame mirrorless camera suitable for professional photography, portraits, events, and hybrid photo-video work.",
+    "description": "Full-frame mirrorless camera suitable for professional photography, portraits, events, and hybrid 4K photo-video work.",
     "category": "Photography Equipment",
     "location": "Dhaka",
     "price": 85,
@@ -180,15 +180,15 @@
     "condition": "Excellent",
     "brand": "Canon",
     "model": "EOS R6 Mark II",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes two LP-E6NH batteries, charger, and camera strap. Valid NID/Passport copy required at pickup.",
     "status": "approved",
-    "ownerName": "Rahim Uddin",
-    "ownerEmail": "owner09@example.com",
-    "createdAt": "2026-11-18T09:00:00.000Z"
+    "ownerName": "Tariqul Islam",
+    "ownerEmail": "tariq@framecraftdhaka.com",
+    "createdAt": "2026-10-15T12:05:30.000Z"
   },
   {
     "name": "Sony A7 IV Mirrorless Camera",
-    "description": "Full-frame hybrid camera for commercial photography, weddings, interviews, and high-quality video production.",
+    "description": "Full-frame hybrid camera for commercial photography, weddings, interviews, and high-quality 10-bit video production.",
     "category": "Photography Equipment",
     "location": "Dhaka",
     "price": 90,
@@ -197,11 +197,11 @@
     "condition": "Excellent",
     "brand": "Sony",
     "model": "A7 IV",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Supplied with 2x NP-FZ100 batteries and dual charger. Sensor and body are inspected together at pickup and return.",
     "status": "approved",
-    "ownerName": "Nusrat Jahan",
-    "ownerEmail": "owner10@example.com",
-    "createdAt": "2026-11-10T09:00:00.000Z"
+    "ownerName": "Mehedi Hasan",
+    "ownerEmail": "mehedi@lensvaultbd.com",
+    "createdAt": "2026-10-17T09:18:44.000Z"
   },
   {
     "name": "Nikon Z6 II Camera",
@@ -214,11 +214,11 @@
     "condition": "Good",
     "brand": "Nikon",
     "model": "Z6 II",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Memory cards are not included. Return all body caps, batteries, and charger in the provided hard case.",
     "status": "approved",
-    "ownerName": "Tanvir Ahmed",
-    "ownerEmail": "owner11@example.com",
-    "createdAt": "2026-11-11T09:00:00.000Z"
+    "ownerName": "Sabbir Rahman",
+    "ownerEmail": "sabbir@ctgcinemagear.com",
+    "createdAt": "2026-10-20T14:33:12.000Z"
   },
   {
     "name": "Sony FE 24-70mm f/2.8 GM II Lens",
@@ -231,11 +231,11 @@
     "condition": "Excellent",
     "brand": "Sony",
     "model": "FE 24-70mm f/2.8 GM II",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Supplied with UV filter, lens hood, and padded pouch. Glass elements are checked for scratches before and after rental.",
     "status": "approved",
-    "ownerName": "Sadia Islam",
-    "ownerEmail": "owner12@example.com",
-    "createdAt": "2026-11-12T09:00:00.000Z"
+    "ownerName": "Nadia Afrin",
+    "ownerEmail": "nadia@studio9rentals.com",
+    "createdAt": "2026-10-23T11:27:55.000Z"
   },
   {
     "name": "Canon RF 70-200mm f/2.8L Lens",
@@ -248,15 +248,15 @@
     "condition": "Excellent",
     "brand": "Canon",
     "model": "RF 70-200mm f/2.8L IS USM",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes tripod collar, lens hood, and front/rear caps. Keep protected from rain and dust during outdoor shoots.",
     "status": "approved",
-    "ownerName": "Imran Hossain",
-    "ownerEmail": "owner13@example.com",
-    "createdAt": "2026-11-13T09:00:00.000Z"
+    "ownerName": "Tariqul Islam",
+    "ownerEmail": "tariq@framecraftdhaka.com",
+    "createdAt": "2026-10-26T08:49:18.000Z"
   },
   {
     "name": "DJI RS 3 Pro Gimbal",
-    "description": "Three-axis camera stabilizer for smooth tracking shots, filmmaking, and professional video production.",
+    "description": "Three-axis carbon fiber camera stabilizer for smooth tracking shots, filmmaking, and professional video production.",
     "category": "Photography Equipment",
     "location": "Sylhet",
     "price": 45,
@@ -265,15 +265,15 @@
     "condition": "Good",
     "brand": "DJI",
     "model": "RS 3 Pro",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes quick-release plate, focus motor, and carrying case. Always lock axes before transporting.",
     "status": "approved",
-    "ownerName": "Farhana Akter",
-    "ownerEmail": "owner14@example.com",
-    "createdAt": "2026-11-14T09:00:00.000Z"
+    "ownerName": "Faisal Kabir",
+    "ownerEmail": "faisal@sylhetfilmhouse.com",
+    "createdAt": "2026-10-28T17:12:06.000Z"
   },
   {
     "name": "Godox AD600Pro Studio Flash",
-    "description": "Portable 600Ws battery-powered flash for outdoor portraits, fashion shoots, and location photography.",
+    "description": "Portable 600Ws battery-powered strobe flash for outdoor portraits, fashion shoots, and location photography.",
     "category": "Photography Equipment",
     "location": "Dhaka",
     "price": 40,
@@ -282,15 +282,15 @@
     "condition": "Excellent",
     "brand": "Godox",
     "model": "AD600Pro",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes battery pack, charger, and standard reflector. Trigger (Canon/Sony/Nikon) available upon request.",
     "status": "approved",
-    "ownerName": "Mahmud Hasan",
-    "ownerEmail": "owner15@example.com",
-    "createdAt": "2026-11-15T09:00:00.000Z"
+    "ownerName": "Mehedi Hasan",
+    "ownerEmail": "mehedi@lensvaultbd.com",
+    "createdAt": "2026-10-30T10:04:39.000Z"
   },
   {
     "name": "Manfrotto 055 Tripod Kit",
-    "description": "Sturdy professional tripod with fluid head for studio, landscape, product, and video shooting.",
+    "description": "Sturdy professional aluminum tripod with fluid video head for studio, landscape, product, and interview shooting.",
     "category": "Photography Equipment",
     "location": "Rajshahi",
     "price": 18,
@@ -299,11 +299,11 @@
     "condition": "Good",
     "brand": "Manfrotto",
     "model": "055 with XPRO Head",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes quick-release plate and padded carry bag. Missing quick-release plate incurs a replacement fee.",
     "status": "approved",
-    "ownerName": "Rafiq Karim",
-    "ownerEmail": "owner16@example.com",
-    "createdAt": "2026-11-16T09:00:00.000Z"
+    "ownerName": "Arifur Rahman",
+    "ownerEmail": "arif@rajshahicamerahub.com",
+    "createdAt": "2026-11-01T13:55:21.000Z"
   },
   {
     "name": "DJI Mavic 3 Pro Cine Drone",
@@ -316,15 +316,15 @@
     "condition": "Excellent",
     "brand": "DJI",
     "model": "Mavic 3 Pro Cine",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes RC Pro controller and 3 flight batteries. Renter is responsible for local airspace compliance and safe operation.",
     "status": "approved",
-    "ownerName": "Nusrat Jahan",
-    "ownerEmail": "owner10@example.com",
-    "createdAt": "2026-11-19T11:00:00.000Z"
+    "ownerName": "Mehedi Hasan",
+    "ownerEmail": "mehedi@lensvaultbd.com",
+    "createdAt": "2026-11-15T10:15:48.000Z"
   },
   {
     "name": "Aputure 600d Pro LED Video Light",
-    "description": "High-output daylight-balanced COB LED light with Bowens mount for studio interviews and film sets.",
+    "description": "High-output daylight-balanced COB LED light with Bowens mount for studio interviews, commercials, and film sets.",
     "category": "Photography Equipment",
     "location": "Dhaka",
     "price": 65,
@@ -333,15 +333,15 @@
     "condition": "Excellent",
     "brand": "Aputure",
     "model": "LS 600d Pro",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes control box, hyper-reflector, and rolling hard case. Heavy-duty C-stand can be bundled separately.",
     "status": "approved",
-    "ownerName": "Sadia Islam",
-    "ownerEmail": "owner12@example.com",
-    "createdAt": "2026-11-19T12:00:00.000Z"
+    "ownerName": "Nadia Afrin",
+    "ownerEmail": "nadia@studio9rentals.com",
+    "createdAt": "2026-11-17T14:42:11.000Z"
   },
   {
     "name": "Toyota Hiace Commuter",
-    "description": "14-seat passenger van suitable for airport transfers, staff transport, family trips, and group travel. Driver available on request.",
+    "description": "14-seat AC passenger van suitable for airport transfers, corporate staff transport, family trips, and group travel.",
     "category": "Vehicles & Transportation",
     "location": "Dhaka",
     "price": 110,
@@ -350,15 +350,15 @@
     "condition": "Good",
     "brand": "Toyota",
     "model": "Hiace Commuter",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Rate covers 10 hours/day within city limits. Fuel, bridge tolls, and parking fees are borne by the renter.",
     "status": "approved",
-    "ownerName": "Rahim Uddin",
-    "ownerEmail": "owner17@example.com",
-    "createdAt": "2026-11-17T09:00:00.000Z"
+    "ownerName": "Kamrul Hasan",
+    "ownerEmail": "kamrul@dhakadrivefleet.com",
+    "createdAt": "2026-10-18T08:30:14.000Z"
   },
   {
     "name": "Mitsubishi Pajero Sport",
-    "description": "SUV suitable for family travel, business trips, and highway journeys. Rental includes standard insurance terms.",
+    "description": "7-seat SUV suitable for family travel, executive business trips, and highway journeys with standard insurance coverage.",
     "category": "Vehicles & Transportation",
     "location": "Dhaka",
     "price": 135,
@@ -367,15 +367,15 @@
     "condition": "Excellent",
     "brand": "Mitsubishi",
     "model": "Pajero Sport",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Valid driving license required for self-drive; chauffeur option available. Return with the same fuel level as pickup.",
     "status": "approved",
-    "ownerName": "Nusrat Jahan",
-    "ownerEmail": "owner18@example.com",
-    "createdAt": "2026-11-18T09:00:00.000Z"
+    "ownerName": "Sharmin Akter",
+    "ownerEmail": "sharmin@primewheelsbd.com",
+    "createdAt": "2026-10-21T12:19:37.000Z"
   },
   {
     "name": "Toyota Axio Hybrid",
-    "description": "Fuel-efficient sedan for city travel, business appointments, and airport transfers. Driver available on request.",
+    "description": "Fuel-efficient sedan for city travel, business appointments, and airport transfers. Chauffeur available on request.",
     "category": "Vehicles & Transportation",
     "location": "Dhaka",
     "price": 55,
@@ -384,15 +384,15 @@
     "condition": "Good",
     "brand": "Toyota",
     "model": "Axio Hybrid",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "No smoking inside the vehicle. Overtime beyond 10 hours is billed hourly; tolls and parking are extra.",
     "status": "approved",
-    "ownerName": "Tanvir Ahmed",
-    "ownerEmail": "owner19@example.com",
-    "createdAt": "2026-11-10T09:00:00.000Z"
+    "ownerName": "Kamrul Hasan",
+    "ownerEmail": "kamrul@dhakadrivefleet.com",
+    "createdAt": "2026-10-23T07:50:22.000Z"
   },
   {
     "name": "Isuzu NPR Delivery Truck",
-    "description": "Light-duty commercial truck suitable for transporting goods, furniture, and small business deliveries.",
+    "description": "Light-duty commercial truck suitable for transporting goods, office furniture, and small business deliveries.",
     "category": "Vehicles & Transportation",
     "location": "Narayanganj",
     "price": 125,
@@ -401,15 +401,15 @@
     "condition": "Good",
     "brand": "Isuzu",
     "model": "NPR",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes licensed commercial driver. Loading/unloading labor is not included in the rental rate.",
     "status": "approved",
-    "ownerName": "Sadia Islam",
-    "ownerEmail": "owner20@example.com",
-    "createdAt": "2026-11-11T09:00:00.000Z"
+    "ownerName": "Zahidul Islam",
+    "ownerEmail": "zahid@narayanganjcargo.com",
+    "createdAt": "2026-10-25T16:03:58.000Z"
   },
   {
     "name": "Bajaj Pulsar NS160 Motorcycle",
-    "description": "Street motorcycle suitable for short-term personal transport and daily commuting. Valid licence required.",
+    "description": "Street motorcycle suitable for short-term personal transport and daily city commuting.",
     "category": "Vehicles & Transportation",
     "location": "Dhaka",
     "price": 22,
@@ -418,15 +418,15 @@
     "condition": "Good",
     "brand": "Bajaj",
     "model": "Pulsar NS160",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Valid motorcycle driving license and NID mandatory. One DOT-certified helmet is provided free with the rental.",
     "status": "approved",
-    "ownerName": "Imran Hossain",
-    "ownerEmail": "owner21@example.com",
-    "createdAt": "2026-11-12T09:00:00.000Z"
+    "ownerName": "Ashraful Alam",
+    "ownerEmail": "ashraf@cityridersdhaka.com",
+    "createdAt": "2026-10-27T11:44:10.000Z"
   },
   {
     "name": "Yamaha FZ-S FI Motorcycle",
-    "description": "Fuel-injected commuter motorcycle for city travel. Helmet and valid driving licence required.",
+    "description": "Fuel-injected commuter motorcycle for comfortable city travel and daily errands.",
     "category": "Vehicles & Transportation",
     "location": "Chattogram",
     "price": 20,
@@ -435,11 +435,11 @@
     "condition": "Excellent",
     "brand": "Yamaha",
     "model": "FZ-S FI",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Helmet and valid driving license required. Renter is responsible for any traffic fines incurred during the rental period.",
     "status": "approved",
-    "ownerName": "Farhana Akter",
-    "ownerEmail": "owner22@example.com",
-    "createdAt": "2026-11-13T09:00:00.000Z"
+    "ownerName": "Rashedul Karim",
+    "ownerEmail": "rashed@portcitylogistics.com",
+    "createdAt": "2026-10-29T09:12:45.000Z"
   },
   {
     "name": "Suzuki Carry Pickup",
@@ -452,15 +452,15 @@
     "condition": "Good",
     "brand": "Suzuki",
     "model": "Carry",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Maximum payload 1 tonne. Fuel and highway tolls are paid by the renter.",
     "status": "approved",
-    "ownerName": "Mahmud Hasan",
-    "ownerEmail": "owner23@example.com",
-    "createdAt": "2026-11-14T09:00:00.000Z"
+    "ownerName": "Mizanur Rahman",
+    "ownerEmail": "mizan@gazipurtransports.com",
+    "createdAt": "2026-11-02T14:26:31.000Z"
   },
   {
     "name": "Ashok Leyland 1616 Cargo Truck",
-    "description": "Medium-duty cargo truck for commercial transport and inter-district goods movement. Driver arrangement available.",
+    "description": "Medium-duty cargo truck for commercial transport and inter-district goods movement.",
     "category": "Vehicles & Transportation",
     "location": "Dhaka",
     "price": 175,
@@ -469,15 +469,15 @@
     "condition": "Good",
     "brand": "Ashok Leyland",
     "model": "1616",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Inter-district trips require 24-hour advance booking. Tarpaulin cover and ropes included.",
     "status": "approved",
-    "ownerName": "Rafiq Karim",
-    "ownerEmail": "owner24@example.com",
-    "createdAt": "2026-11-15T09:00:00.000Z"
+    "ownerName": "Zahidul Islam",
+    "ownerEmail": "zahid@narayanganjcargo.com",
+    "createdAt": "2026-11-04T06:55:19.000Z"
   },
   {
     "name": "Toyota Noah Hybrid MPV",
-    "description": "7-seat family MPV with spacious cabin and dual sliding doors for city rides, corporate travel, and out-of-town trips.",
+    "description": "7-seat family MPV with spacious cabin and dual power sliding doors for city rides, corporate travel, and out-of-town trips.",
     "category": "Vehicles & Transportation",
     "location": "Dhaka",
     "price": 85,
@@ -486,11 +486,11 @@
     "condition": "Excellent",
     "brand": "Toyota",
     "model": "Noah Hybrid",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Available with or without driver. Clean interior required upon return; excessive mess incurs a cleaning fee.",
     "status": "approved",
-    "ownerName": "Tanvir Ahmed",
-    "ownerEmail": "owner19@example.com",
-    "createdAt": "2026-11-19T13:00:00.000Z"
+    "ownerName": "Sharmin Akter",
+    "ownerEmail": "sharmin@primewheelsbd.com",
+    "createdAt": "2026-11-16T08:18:27.000Z"
   },
   {
     "name": "Toyota Forklift 3-Tonne Diesel",
@@ -503,11 +503,11 @@
     "condition": "Good",
     "brand": "Toyota",
     "model": "8FD30",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Certified forklift operator required. Delivery to port or factory premises arranged at cost.",
     "status": "approved",
-    "ownerName": "Rafiq Karim",
-    "ownerEmail": "owner24@example.com",
-    "createdAt": "2026-11-19T14:00:00.000Z"
+    "ownerName": "Rashedul Karim",
+    "ownerEmail": "rashed@portcitylogistics.com",
+    "createdAt": "2026-11-18T11:09:50.000Z"
   },
   {
     "name": "John Deere 5310 Tractor",
@@ -520,15 +520,15 @@
     "condition": "Good",
     "brand": "John Deere",
     "model": "5310",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Diesel not included. Implements such as disc harrow or trailer can be added on request.",
     "status": "approved",
-    "ownerName": "Rahim Uddin",
-    "ownerEmail": "owner25@example.com",
-    "createdAt": "2026-11-16T09:00:00.000Z"
+    "ownerName": "Abdul Malek",
+    "ownerEmail": "malek@mymensinghagro.com",
+    "createdAt": "2026-10-19T07:15:42.000Z"
   },
   {
     "name": "Mahindra 575 DI Tractor",
-    "description": "Farm tractor suitable for tillage, field preparation, and hauling agricultural loads.",
+    "description": "Reliable farm tractor suitable for tillage, field preparation, and hauling agricultural loads.",
     "category": "Agriculture Equipment",
     "location": "Rangpur",
     "price": 150,
@@ -537,15 +537,15 @@
     "condition": "Good",
     "brand": "Mahindra",
     "model": "575 DI",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Renter must provide safe overnight parking at the farm. Basic maintenance and grease included.",
     "status": "approved",
-    "ownerName": "Nusrat Jahan",
-    "ownerEmail": "owner26@example.com",
-    "createdAt": "2026-11-17T09:00:00.000Z"
+    "ownerName": "Shafiqul Islam",
+    "ownerEmail": "shafiq@rangpurfarmtech.com",
+    "createdAt": "2026-10-22T06:48:11.000Z"
   },
   {
     "name": "Kubota DC-70 Combine Harvester",
-    "description": "Combine harvester for cutting, threshing, and cleaning paddy during the rice harvest season.",
+    "description": "High-efficiency combine harvester for cutting, threshing, and cleaning paddy during the rice harvest season.",
     "category": "Agriculture Equipment",
     "location": "Dinajpur",
     "price": 480,
@@ -554,11 +554,11 @@
     "condition": "Excellent",
     "brand": "Kubota",
     "model": "DC-70",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes trained operator. Minimum 1-day booking; field must be drained of deep standing water prior to arrival.",
     "status": "approved",
-    "ownerName": "Tanvir Ahmed",
-    "ownerEmail": "owner27@example.com",
-    "createdAt": "2026-11-18T09:00:00.000Z"
+    "ownerName": "Habibur Rahman",
+    "ownerEmail": "habib@dinajpurharvesters.com",
+    "createdAt": "2026-10-24T08:02:35.000Z"
   },
   {
     "name": "Yanmar AP4 Rice Transplanter",
@@ -571,15 +571,15 @@
     "condition": "Good",
     "brand": "Yanmar",
     "model": "AP4",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Requires mat-type nursery seedlings. Machine must be washed free of mud before return.",
     "status": "approved",
-    "ownerName": "Sadia Islam",
-    "ownerEmail": "owner28@example.com",
-    "createdAt": "2026-11-10T09:00:00.000Z"
+    "ownerName": "Lutfur Rahman",
+    "ownerEmail": "lutfur@boguraagri.com",
+    "createdAt": "2026-10-27T10:33:19.000Z"
   },
   {
     "name": "Honda WB30XT Water Pump",
-    "description": "Petrol-powered centrifugal water pump for irrigation, field drainage, and water transfer.",
+    "description": "Petrol-powered centrifugal water pump for irrigation, field drainage, and high-volume water transfer.",
     "category": "Agriculture Equipment",
     "location": "Jashore",
     "price": 35,
@@ -588,15 +588,15 @@
     "condition": "Excellent",
     "brand": "Honda",
     "model": "WB30XT",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes 3-inch suction hose and strainer. Do not run the pump dry.",
     "status": "approved",
-    "ownerName": "Imran Hossain",
-    "ownerEmail": "owner29@example.com",
-    "createdAt": "2026-11-11T09:00:00.000Z"
+    "ownerName": "Nazmul Haque",
+    "ownerEmail": "nazmul@jashoreirrigation.com",
+    "createdAt": "2026-10-29T13:20:05.000Z"
   },
   {
     "name": "STIHL FS 230 Brush Cutter",
-    "description": "Petrol brush cutter for clearing grass, weeds, and field edges around farms and orchards.",
+    "description": "Petrol brush cutter for clearing tall grass, weeds, and field edges around farms and orchards.",
     "category": "Agriculture Equipment",
     "location": "Cumilla",
     "price": 30,
@@ -605,11 +605,11 @@
     "condition": "Good",
     "brand": "STIHL",
     "model": "FS 230",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Uses 2-stroke petrol-oil mix (supplied with first mix). Includes harness and metal grass blade.",
     "status": "approved",
     "ownerName": "Farhana Akter",
-    "ownerEmail": "owner30@example.com",
-    "createdAt": "2026-11-12T09:00:00.000Z"
+    "ownerEmail": "farhana@cumillatools.com",
+    "createdAt": "2026-11-01T09:11:28.000Z"
   },
   {
     "name": "KisanKraft KK-IC-215 Power Weeder",
@@ -622,15 +622,15 @@
     "condition": "Good",
     "brand": "KisanKraft",
     "model": "KK-IC-215",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Standard rotary blades fitted. Clean soil from blades before returning.",
     "status": "approved",
-    "ownerName": "Mahmud Hasan",
-    "ownerEmail": "owner31@example.com",
-    "createdAt": "2026-11-13T09:00:00.000Z"
+    "ownerName": "Rezaul Karim",
+    "ownerEmail": "rezaul@pabnaagroequip.com",
+    "createdAt": "2026-11-03T11:47:54.000Z"
   },
   {
     "name": "DJI Agras T30 Agricultural Drone",
-    "description": "Agricultural spraying drone for crop treatment and field application. Trained operator and local permissions required.",
+    "description": "30-liter agricultural spraying drone for crop treatment and precision field application.",
     "category": "Agriculture Equipment",
     "location": "Dhaka",
     "price": 320,
@@ -639,11 +639,11 @@
     "condition": "Excellent",
     "brand": "DJI",
     "model": "Agras T30",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Supplied with certified drone pilot and 3 flight batteries. Renter provides spraying solution and water source.",
     "status": "approved",
-    "ownerName": "Rafiq Karim",
-    "ownerEmail": "owner32@example.com",
-    "createdAt": "2026-11-14T09:00:00.000Z"
+    "ownerName": "Abdul Malek",
+    "ownerEmail": "malek@mymensinghagro.com",
+    "createdAt": "2026-11-06T08:25:16.000Z"
   },
   {
     "name": "STIHL MS 250 Petrol Chainsaw",
@@ -656,15 +656,15 @@
     "condition": "Good",
     "brand": "STIHL",
     "model": "MS 250",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Supplied with freshly sharpened chain and bar oil. Protective gloves and goggles recommended.",
     "status": "approved",
-    "ownerName": "Farhana Akter",
-    "ownerEmail": "owner30@example.com",
-    "createdAt": "2026-11-19T15:00:00.000Z"
+    "ownerName": "Faisal Kabir",
+    "ownerEmail": "faisal@sylhetfilmhouse.com",
+    "createdAt": "2026-11-15T12:34:09.000Z"
   },
   {
     "name": "Sonalika Rotary Tiller (Rotavator)",
-    "description": "Tractor-mounted rotary tiller for fast seedbed preparation and soil pulverization in wet or dry fields.",
+    "description": "Tractor-mounted 6-foot rotary tiller for fast seedbed preparation and soil pulverization in wet or dry fields.",
     "category": "Agriculture Equipment",
     "location": "Bogura",
     "price": 75,
@@ -673,15 +673,15 @@
     "condition": "Good",
     "brand": "Sonalika",
     "model": "Smart Series 6ft",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Compatible with 45–60 HP tractors. PTO shaft included; inspect L-blades before and after use.",
     "status": "approved",
-    "ownerName": "Rahim Uddin",
-    "ownerEmail": "owner25@example.com",
-    "createdAt": "2026-11-19T16:00:00.000Z"
+    "ownerName": "Lutfur Rahman",
+    "ownerEmail": "lutfur@boguraagri.com",
+    "createdAt": "2026-11-17T07:58:40.000Z"
   },
   {
     "name": "Epson EB-X06 Projector",
-    "description": "Portable XGA projector suitable for classroom lessons, office presentations, and small meeting rooms.",
+    "description": "Portable 3600-lumen XGA projector suitable for classroom lessons, office presentations, and small meeting rooms.",
     "category": "Electronics",
     "location": "Dhaka",
     "price": 35,
@@ -690,15 +690,15 @@
     "condition": "Good",
     "brand": "Epson",
     "model": "EB-X06",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes HDMI cable, power cord, remote, and carry bag. Allow lamp to cool before unplugging.",
     "status": "approved",
-    "ownerName": "Rahim Uddin",
-    "ownerEmail": "owner33@example.com",
-    "createdAt": "2026-11-15T09:00:00.000Z"
+    "ownerName": "Saiful Islam",
+    "ownerEmail": "saiful@dhakatechrentals.com",
+    "createdAt": "2026-10-20T10:12:49.000Z"
   },
   {
     "name": "BenQ TH585 Full HD Projector",
-    "description": "1080p projector suitable for presentations, training sessions, and home entertainment.",
+    "description": "1080p low-latency projector suitable for business presentations, training sessions, and movie screenings.",
     "category": "Electronics",
     "location": "Chattogram",
     "price": 45,
@@ -707,15 +707,15 @@
     "condition": "Excellent",
     "brand": "BenQ",
     "model": "TH585",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes 5m HDMI cable and remote control. Tripod screen available as an optional add-on.",
     "status": "approved",
-    "ownerName": "Nusrat Jahan",
-    "ownerEmail": "owner34@example.com",
-    "createdAt": "2026-11-16T09:00:00.000Z"
+    "ownerName": "Tasnim Tabassum",
+    "ownerEmail": "tasnim@ctgavsolutions.com",
+    "createdAt": "2026-10-23T15:40:22.000Z"
   },
   {
     "name": "Dell PowerEdge T150 Server",
-    "description": "Tower server for temporary development labs, testing environments, and small business workloads.",
+    "description": "Tower server for temporary development labs, on-premise testing environments, and small business workloads.",
     "category": "Electronics",
     "location": "Dhaka",
     "price": 95,
@@ -724,15 +724,15 @@
     "condition": "Excellent",
     "brand": "Dell",
     "model": "PowerEdge T150",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Supplied with clean OS install. All data is securely wiped upon return; renter is responsible for backups.",
     "status": "approved",
-    "ownerName": "Tanvir Ahmed",
-    "ownerEmail": "owner35@example.com",
-    "createdAt": "2026-11-17T09:00:00.000Z"
+    "ownerName": "Nayeem Chowdhury",
+    "ownerEmail": "nayeem@cloudlabhardware.com",
+    "createdAt": "2026-10-26T12:18:04.000Z"
   },
   {
     "name": "Synology DiskStation DS923+ NAS",
-    "description": "Four-bay network storage device for team file sharing, backups, and temporary media workflows. Drives supplied separately unless agreed.",
+    "description": "Four-bay network storage device for team file sharing, backups, and temporary media production workflows.",
     "category": "Electronics",
     "location": "Dhaka",
     "price": 48,
@@ -741,32 +741,32 @@
     "condition": "Excellent",
     "brand": "Synology",
     "model": "DS923+",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Enclosure only by default; enterprise HDDs can be included on request. Return with power brick and Ethernet cables.",
     "status": "approved",
-    "ownerName": "Sadia Islam",
-    "ownerEmail": "owner36@example.com",
-    "createdAt": "2026-11-18T09:00:00.000Z"
+    "ownerName": "Nayeem Chowdhury",
+    "ownerEmail": "nayeem@cloudlabhardware.com",
+    "createdAt": "2026-10-28T09:51:37.000Z"
   },
   {
-    "name": "APC Smart-UPS 1500VA",
-    "description": "Line-interactive UPS for protecting desktop computers, networking devices, and office equipment during power interruptions.",
+    "name": "24-inch LED Computer Monitor",
+    "description": "Full HD desktop monitor for office work, graphic design, presentations, and computer workstations.",
     "category": "Electronics",
     "location": "Gazipur",
-    "price": 25,
+    "price": 15,
     "rentalType": "Daily",
     "availableQuantity": 25,
     "condition": "Good",
-    "brand": "APC",
-    "model": "Smart-UPS SMT1500I",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "brand": "Dell",
+    "model": "24-inch Full HD Monitor",
+    "terms": "Includes power cable and HDMI cable. Handle the display panel carefully during transportation.",
     "status": "approved",
-    "ownerName": "Imran Hossain",
-    "ownerEmail": "owner37@example.com",
-    "createdAt": "2026-11-10T09:00:00.000Z"
+    "ownerName": "Rifat Hossain",
+    "ownerEmail": "rifat@gazipurpowertech.com",
+    "createdAt": "2026-10-31T14:07:13.000Z"
   },
   {
     "name": "TP-Link Omada Wi-Fi 6 Access Point",
-    "description": "Ceiling-mount wireless access point for temporary office networks, events, and training spaces.",
+    "description": "High-density ceiling/wall-mount wireless access point for temporary office networks, events, and workshops.",
     "category": "Electronics",
     "location": "Dhaka",
     "price": 15,
@@ -775,15 +775,15 @@
     "condition": "Excellent",
     "brand": "TP-Link",
     "model": "EAP650",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes PoE injector and mounting bracket. Factory reset performed after every rental.",
     "status": "approved",
-    "ownerName": "Farhana Akter",
-    "ownerEmail": "owner38@example.com",
-    "createdAt": "2026-11-11T09:00:00.000Z"
+    "ownerName": "Saiful Islam",
+    "ownerEmail": "saiful@dhakatechrentals.com",
+    "createdAt": "2026-11-02T11:29:46.000Z"
   },
   {
     "name": "Apple MacBook Pro 14-inch M3",
-    "description": "Portable laptop for software development, design, presentations, and professional creative workloads.",
+    "description": "Portable laptop for software development, UI/UX design, video editing, and executive presentations.",
     "category": "Electronics",
     "location": "Dhaka",
     "price": 75,
@@ -792,15 +792,15 @@
     "condition": "Excellent",
     "brand": "Apple",
     "model": "MacBook Pro 14-inch M3",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes original MagSafe charger and protective sleeve. Please sign out of iCloud before returning.",
     "status": "approved",
-    "ownerName": "Mahmud Hasan",
-    "ownerEmail": "owner39@example.com",
-    "createdAt": "2026-11-12T09:00:00.000Z"
+    "ownerName": "Saiful Islam",
+    "ownerEmail": "saiful@dhakatechrentals.com",
+    "createdAt": "2026-11-05T16:14:20.000Z"
   },
   {
     "name": "Samsung 55-inch Crystal UHD TV",
-    "description": "Large 4K display suitable for conference rooms, exhibitions, presentations, and event viewing areas.",
+    "description": "Large 4K display suitable for conference rooms, trade show booths, presentations, and event viewing areas.",
     "category": "Electronics",
     "location": "Sylhet",
     "price": 60,
@@ -809,15 +809,15 @@
     "condition": "Good",
     "brand": "Samsung",
     "model": "UA55CU8000",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes rolling floor stand, remote, and HDMI cable. Transport upright in provided flight case only.",
     "status": "approved",
-    "ownerName": "Rafiq Karim",
-    "ownerEmail": "owner40@example.com",
-    "createdAt": "2026-11-13T09:00:00.000Z"
+    "ownerName": "Jubayer Ahmed",
+    "ownerEmail": "jubayer@sylhetdisplay.com",
+    "createdAt": "2026-11-08T10:38:55.000Z"
   },
   {
     "name": "Sony PlayStation 5 Console Bundle",
-    "description": "PS5 console with two DualSense controllers for gaming events, corporate lounges, and weekend entertainment.",
+    "description": "PS5 Slim console with two DualSense controllers for gaming events, corporate lounges, and weekend entertainment.",
     "category": "Electronics",
     "location": "Dhaka",
     "price": 30,
@@ -826,15 +826,15 @@
     "condition": "Excellent",
     "brand": "Sony",
     "model": "PlayStation 5 Slim",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes 2 controllers, HDMI 2.1 cable, and carrying case. Refundable deposit required; return all accessories intact.",
     "status": "approved",
-    "ownerName": "Mahmud Hasan",
-    "ownerEmail": "owner39@example.com",
-    "createdAt": "2026-11-19T17:00:00.000Z"
+    "ownerName": "Saiful Islam",
+    "ownerEmail": "saiful@dhakatechrentals.com",
+    "createdAt": "2026-11-16T18:22:14.000Z"
   },
   {
     "name": "EcoFlow DELTA 2 Portable Power Station",
-    "description": "1024Wh LiFePO4 battery station for outdoor shoots, remote work setups, and backup power for electronics.",
+    "description": "1024Wh LiFePO4 battery station for outdoor shoots, remote work setups, and silent backup power for electronics.",
     "category": "Electronics",
     "location": "Dhaka",
     "price": 42,
@@ -843,15 +843,15 @@
     "condition": "Excellent",
     "brand": "EcoFlow",
     "model": "DELTA 2",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Supplied at 100% charge with AC charging cable. Keep away from rain and direct moisture.",
     "status": "approved",
-    "ownerName": "Imran Hossain",
-    "ownerEmail": "owner37@example.com",
-    "createdAt": "2026-11-19T18:00:00.000Z"
+    "ownerName": "Rifat Hossain",
+    "ownerEmail": "rifat@gazipurpowertech.com",
+    "createdAt": "2026-11-19T09:47:31.000Z"
   },
   {
     "name": "JBL PRX815W Powered Speaker",
-    "description": "15-inch powered PA speaker for conferences, weddings, live performances, and outdoor announcements.",
+    "description": "15-inch 1500W powered PA speaker with Wi-Fi DSP for conferences, weddings, live performances, and outdoor announcements.",
     "category": "Event Equipment",
     "location": "Dhaka",
     "price": 65,
@@ -860,15 +860,15 @@
     "condition": "Excellent",
     "brand": "JBL",
     "model": "PRX815W",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes tripod speaker stand, power cable, and 10m XLR cable. Protect from rain during outdoor events.",
     "status": "approved",
-    "ownerName": "Rahim Uddin",
-    "ownerEmail": "owner41@example.com",
-    "createdAt": "2026-11-14T09:00:00.000Z"
+    "ownerName": "Shakil Mahmud",
+    "ownerEmail": "shakil@dhakasoundstage.com",
+    "createdAt": "2026-10-21T14:15:08.000Z"
   },
   {
     "name": "Yamaha MG16XU Audio Mixer",
-    "description": "16-channel analog mixer with built-in effects and USB connectivity for live sound and event production.",
+    "description": "16-channel analog mixing console with SPX digital effects and USB audio interface for live sound and events.",
     "category": "Event Equipment",
     "location": "Dhaka",
     "price": 45,
@@ -877,15 +877,15 @@
     "condition": "Good",
     "brand": "Yamaha",
     "model": "MG16XU",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Supplied in protective flight case with power adapter. Sound technician can be booked separately.",
     "status": "approved",
-    "ownerName": "Nusrat Jahan",
-    "ownerEmail": "owner42@example.com",
-    "createdAt": "2026-11-15T09:00:00.000Z"
+    "ownerName": "Shakil Mahmud",
+    "ownerEmail": "shakil@dhakasoundstage.com",
+    "createdAt": "2026-10-24T11:30:44.000Z"
   },
   {
     "name": "Shure SM58 Wireless Microphone System",
-    "description": "Wireless vocal microphone system suitable for speeches, stage hosting, and live performances.",
+    "description": "UHF wireless vocal microphone system suitable for keynote speeches, stage hosting, and live music.",
     "category": "Event Equipment",
     "location": "Chattogram",
     "price": 38,
@@ -894,15 +894,15 @@
     "condition": "Excellent",
     "brand": "Shure",
     "model": "BLX24/SM58",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes receiver, handheld transmitter, mic clip, and fresh AA batteries. Return in hard case.",
     "status": "approved",
-    "ownerName": "Tanvir Ahmed",
-    "ownerEmail": "owner43@example.com",
-    "createdAt": "2026-11-16T09:00:00.000Z"
+    "ownerName": "Touhidul Islam",
+    "ownerEmail": "touhid@ctgeventpro.com",
+    "createdAt": "2026-10-27T16:45:19.000Z"
   },
   {
     "name": "Chauvet DJ SlimPAR LED Light Set",
-    "description": "LED wash lighting fixtures for stage decoration, weddings, parties, and small performances.",
+    "description": "RGBA LED wash lighting fixtures for stage uplighting, weddings, parties, and corporate backdrops.",
     "category": "Event Equipment",
     "location": "Dhaka",
     "price": 30,
@@ -911,15 +911,15 @@
     "condition": "Good",
     "brand": "Chauvet DJ",
     "model": "SlimPAR Q12 USB",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes power linking cables and IRC-6 remote. DMX controller available upon request.",
     "status": "approved",
-    "ownerName": "Sadia Islam",
-    "ownerEmail": "owner44@example.com",
-    "createdAt": "2026-11-17T09:00:00.000Z"
+    "ownerName": "Farzana Yasmin",
+    "ownerEmail": "farzana@royalmarqueebd.com",
+    "createdAt": "2026-10-30T13:09:52.000Z"
   },
   {
     "name": "Prolyte Stage Platform 4x4 ft",
-    "description": "Modular stage platform panel for building temporary stages, risers, and performance areas. Price is per panel.",
+    "description": "Modular heavy-duty stage platform panel for building temporary stages, risers, and catwalks. Price is per panel.",
     "category": "Event Equipment",
     "location": "Dhaka",
     "price": 20,
@@ -928,15 +928,15 @@
     "condition": "Good",
     "brand": "Prolyte",
     "model": "StageDex 4x4 ft",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes standard 2ft legs and deck-to-deck clamps. Setup and teardown crew available for orders of 6+ panels.",
     "status": "approved",
-    "ownerName": "Imran Hossain",
-    "ownerEmail": "owner45@example.com",
-    "createdAt": "2026-11-18T09:00:00.000Z"
+    "ownerName": "Shakil Mahmud",
+    "ownerEmail": "shakil@dhakasoundstage.com",
+    "createdAt": "2026-11-03T08:50:17.000Z"
   },
   {
     "name": "Hoshizaki IM-45CNE Ice Maker",
-    "description": "Commercial ice maker for catering, hospitality, and event beverage service. Production depends on operating conditions.",
+    "description": "Commercial self-contained cube ice maker for catering, hospitality, and event beverage service.",
     "category": "Event Equipment",
     "location": "Narayanganj",
     "price": 70,
@@ -945,62 +945,62 @@
     "condition": "Excellent",
     "brand": "Hoshizaki",
     "model": "IM-45CNE",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Requires standard 220V outlet, potable water supply, and floor drain. Sanitized before every delivery.",
     "status": "approved",
-    "ownerName": "Farhana Akter",
-    "ownerEmail": "owner46@example.com",
-    "createdAt": "2026-11-10T09:00:00.000Z"
+    "ownerName": "Monirul Haque",
+    "ownerEmail": "monir@narayanganjcatering.com",
+    "createdAt": "2026-11-06T12:14:38.000Z"
   },
   {
     "name": "Banquet Folding Chair",
-    "description": "Stackable event chair suitable for conferences, wedding receptions, seminars, and community programmes. Price is per chair.",
+    "description": "Stackable commercial event chair suitable for conferences, wedding receptions, seminars, and community programs. Price is per chair.",
     "category": "Event Equipment",
     "location": "Gazipur",
     "price": 3,
     "rentalType": "Daily",
     "availableQuantity": 25,
     "condition": "Good",
-    "brand": "Generic",
+    "brand": "RFL",
     "model": "Commercial Folding Chair",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Stack neatly for pickup after the event. Broken or missing chairs are billed at replacement cost.",
     "status": "approved",
-    "ownerName": "Mahmud Hasan",
-    "ownerEmail": "owner47@example.com",
-    "createdAt": "2026-11-11T09:00:00.000Z"
+    "ownerName": "Sohel Rana",
+    "ownerEmail": "sohel@gazipureventgear.com",
+    "createdAt": "2026-11-09T10:22:05.000Z"
   },
   {
     "name": "3x6 Metre Marquee Event Tent",
-    "description": "Weather-resistant marquee tent for outdoor functions, exhibitions, catering areas, and temporary event spaces.",
+    "description": "Weather-resistant aluminum-frame marquee tent for outdoor functions, exhibitions, and catering areas.",
     "category": "Event Equipment",
     "location": "Dhaka",
     "price": 120,
     "rentalType": "Daily",
     "availableQuantity": 25,
     "condition": "Good",
-    "brand": "Generic",
+    "brand": "Shelter",
     "model": "3x6m Marquee",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes weighted base plates and removable sidewalls. Installation and dismantling included within Dhaka city.",
     "status": "approved",
-    "ownerName": "Rafiq Karim",
-    "ownerEmail": "owner48@example.com",
-    "createdAt": "2026-11-12T09:00:00.000Z"
+    "ownerName": "Farzana Yasmin",
+    "ownerEmail": "farzana@royalmarqueebd.com",
+    "createdAt": "2026-11-11T15:36:29.000Z"
   },
   {
     "name": "360 Photo Booth Platform",
-    "description": "Motorized 360-degree slow-motion video booth with ring light and stanchions for weddings, galas, and brand activations.",
+    "description": "Motorized 360-degree slow-motion video booth with LED ring light and stanchions for weddings, galas, and brand activations.",
     "category": "Event Equipment",
     "location": "Dhaka",
     "price": 140,
     "rentalType": "Daily",
     "availableQuantity": 25,
     "condition": "Excellent",
-    "brand": "Generic",
+    "brand": "SpinPix",
     "model": "360 Pro 100cm",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Includes remote controller, ring light, and red-carpet stanchions. Smartphone/GoPro mount included.",
     "status": "approved",
-    "ownerName": "Rahim Uddin",
-    "ownerEmail": "owner41@example.com",
-    "createdAt": "2026-11-19T19:00:00.000Z"
+    "ownerName": "Farzana Yasmin",
+    "ownerEmail": "farzana@royalmarqueebd.com",
+    "createdAt": "2026-11-18T16:05:43.000Z"
   },
   {
     "name": "Portable Evaporative Air Cooler",
@@ -1013,10 +1013,10 @@
     "condition": "Good",
     "brand": "Symphony",
     "model": "Movicool XL200",
-    "terms": "A refundable security deposit may be required. The renter must return the equipment clean and in the same condition. Damage, missing accessories, and late returns may incur additional charges.",
+    "terms": "Requires 220V power supply and clean water refill. Drain tank completely before pickup.",
     "status": "approved",
-    "ownerName": "Rafiq Karim",
-    "ownerEmail": "owner48@example.com",
-    "createdAt": "2026-11-19T20:00:00.000Z"
+    "ownerName": "Touhidul Islam",
+    "ownerEmail": "touhid@ctgeventpro.com",
+    "createdAt": "2026-11-20T13:19:57.000Z"
   }
 ]

@@ -260,15 +260,6 @@
     },
     "source": "category"
   },
-  "STIHL FS 230 Brush Cutter": {
-    "photoId": "Oh_8FJfT4I0",
-    "image": "https://images.unsplash.com/photo-1789834746839-9d13aa4d47d6?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8MXx8U1RJSEwlMjBGUyUyMDIzMCUyMEJydXNoJTIwQ3V0dGVyfGVufDF8MHx8fDE3OTUwNzUyODF8MA&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
-    "imageCredit": {
-      "name": "Henry Lösing",
-      "url": "https://unsplash.com/@loesingmedia?utm_source=apex_rentals&utm_medium=referral"
-    },
-    "source": "item"
-  },
   "KisanKraft KK-IC-215 Power Weeder": {
     "photoId": "Rd8FuyvGRGY",
     "image": "https://images.unsplash.com/photo-1564868480822-32f714a0e763?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8M3x8dHJhY3RvciUyMGZhcm0lMjBtYWNoaW5lcnl8ZW58MXwwfHx8MTc5NTA3NTI3OXww&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
@@ -322,15 +313,6 @@
       "url": "https://unsplash.com/@purzlbaum?utm_source=apex_rentals&utm_medium=referral"
     },
     "source": "item"
-  },
-  "APC Smart-UPS 1500VA": {
-    "photoId": "i5UV2HpITYA",
-    "image": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8Mnx8cHJvamVjdG9yJTIwbGFwdG9wJTIwZWxlY3Ryb25pY3N8ZW58MXwwfHx8MTc5NTA3NTI4M3ww&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
-    "imageCredit": {
-      "name": "Erick Cerritos",
-      "url": "https://unsplash.com/@eroneko11?utm_source=apex_rentals&utm_medium=referral"
-    },
-    "source": "category"
   },
   "TP-Link Omada Wi-Fi 6 Access Point": {
     "photoId": "hXVVNB6Qctg",
@@ -428,6 +410,132 @@
     "imageCredit": {
       "name": "Gez Xavier Mansfield",
       "url": "https://unsplash.com/@gezxaviermansfield?utm_source=apex_rentals&utm_medium=referral"
+    },
+    "source": "item"
+  },
+  "Hilti TE 3000-AVR Concrete Breaker": {
+    "photoId": "HvvPceHYLOg",
+    "image": "https://images.unsplash.com/photo-1652303713917-2666b8bee507?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8Nnx8Y29uc3RydWN0aW9uJTIwZXhjYXZhdG9yJTIwbWFjaGluZXJ5fGVufDF8MHx8fDE3OTUzMzkyNjZ8MA&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
+    "imageCredit": {
+      "name": "John Kakuk",
+      "url": "https://unsplash.com/@lensatic?utm_source=apex_rentals&utm_medium=referral"
+    },
+    "source": "category"
+  },
+  "Honda EU70is Portable Generator": {
+    "photoId": "jibUsRaauLY",
+    "image": "https://images.unsplash.com/photo-1610477865545-37711c53144d?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8N3x8Y29uc3RydWN0aW9uJTIwZXhjYXZhdG9yJTIwbWFjaGluZXJ5fGVufDF8MHx8fDE3OTUzMzkyNjZ8MA&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
+    "imageCredit": {
+      "name": "Zizi zi",
+      "url": "https://unsplash.com/@zizi_zi?utm_source=apex_rentals&utm_medium=referral"
+    },
+    "source": "category"
+  },
+  "DJI Mavic 3 Pro Cine Drone": {
+    "photoId": "0addIoploTs",
+    "image": "https://images.unsplash.com/photo-1631052941794-2a6e26d4ac17?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8MXx8REpJJTIwTWF2aWMlMjAzJTIwUHJvJTIwQ2luZSUyMERyb25lfGVufDF8MHx8fDE3OTUzMzkyNjh8MA&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
+    "imageCredit": {
+      "name": "Zac Gudakov",
+      "url": "https://unsplash.com/@zacgudakov?utm_source=apex_rentals&utm_medium=referral"
+    },
+    "source": "item"
+  },
+  "Aputure 600d Pro LED Video Light": {
+    "photoId": "y7A7JUy0ZMg",
+    "image": "https://images.unsplash.com/photo-1608186183585-2de1995450cc?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8MXx8QXB1dHVyZSUyMDYwMGQlMjBQcm8lMjBMRUQlMjBWaWRlbyUyMExpZ2h0fGVufDF8MHx8fDE3OTUzMzkyNjh8MA&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
+    "imageCredit": {
+      "name": "Voice + Video",
+      "url": "https://unsplash.com/@voiceandvideo?utm_source=apex_rentals&utm_medium=referral"
+    },
+    "source": "item"
+  },
+  "Toyota Noah Hybrid MPV": {
+    "photoId": "qGD49DM8PTM",
+    "image": "https://images.unsplash.com/photo-1720545044233-d2ac77fa6030?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8MXx8VG95b3RhJTIwTm9haCUyMEh5YnJpZCUyME1QVnxlbnwxfDB8fHwxNzk1MzM5MjY5fDA&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
+    "imageCredit": {
+      "name": "Rinat Aidarkhan",
+      "url": "https://unsplash.com/@bikosh_s?utm_source=apex_rentals&utm_medium=referral"
+    },
+    "source": "item"
+  },
+  "Toyota Forklift 3-Tonne Diesel": {
+    "photoId": "VGK0XuyDUmE",
+    "image": "https://images.unsplash.com/photo-1776583002164-82a9f9878a28?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8MXx8VG95b3RhJTIwRm9ya2xpZnQlMjAzLVRvbm5lJTIwRGllc2VsfGVufDF8MHx8fDE3OTUzMzkyNzB8MA&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
+    "imageCredit": {
+      "name": "Egor Myznik",
+      "url": "https://unsplash.com/@vonshnauzer?utm_source=apex_rentals&utm_medium=referral"
+    },
+    "source": "item"
+  },
+  "STIHL MS 250 Petrol Chainsaw": {
+    "photoId": "peu8-w5_gz8",
+    "image": "https://images.unsplash.com/photo-1696883186947-71bd95f08c72?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8MXx8U1RJSEwlMjBNUyUyMDI1MCUyMFBldHJvbCUyMENoYWluc2F3fGVufDF8MHx8fDE3OTUzMzkyNzF8MA&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
+    "imageCredit": {
+      "name": "Lincoln Holley",
+      "url": "https://unsplash.com/@linxphotography?utm_source=apex_rentals&utm_medium=referral"
+    },
+    "source": "item"
+  },
+  "Sonalika Rotary Tiller (Rotavator)": {
+    "photoId": "PoisoMav1Jg",
+    "image": "https://images.unsplash.com/photo-1696441567908-6a04d49e1350?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8NHx8dHJhY3RvciUyMGZhcm0lMjBtYWNoaW5lcnl8ZW58MXwwfHx8MTc5NTMzOTI3Mnww&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
+    "imageCredit": {
+      "name": "Hannah Shedrow",
+      "url": "https://unsplash.com/@hannahsue24?utm_source=apex_rentals&utm_medium=referral"
+    },
+    "source": "category"
+  },
+  "Sony PlayStation 5 Console Bundle": {
+    "photoId": "NVD_32BBZFE",
+    "image": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8MXx8U29ueSUyMFBsYXlTdGF0aW9uJTIwNSUyMENvbnNvbGUlMjBCdW5kbGV8ZW58MXwwfHx8MTc5NTMzOTI3M3ww&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
+    "imageCredit": {
+      "name": "Kerde Severin",
+      "url": "https://unsplash.com/@kseverin?utm_source=apex_rentals&utm_medium=referral"
+    },
+    "source": "item"
+  },
+  "EcoFlow DELTA 2 Portable Power Station": {
+    "photoId": "Gi3iUJ1FwxI",
+    "image": "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8M3x8cHJvamVjdG9yJTIwbGFwdG9wJTIwZWxlY3Ryb25pY3N8ZW58MXwwfHx8MTc5NTMzOTI3NHww&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
+    "imageCredit": {
+      "name": "Dell",
+      "url": "https://unsplash.com/@dell?utm_source=apex_rentals&utm_medium=referral"
+    },
+    "source": "category"
+  },
+  "360 Photo Booth Platform": {
+    "photoId": "ZgRhrpMNp1g",
+    "image": "https://images.unsplash.com/photo-1571423551511-733fce0dc317?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8MXx8MzYwJTIwUGhvdG8lMjBCb290aCUyMFBsYXRmb3JtfGVufDF8MHx8fDE3OTUzMzkyNzV8MA&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
+    "imageCredit": {
+      "name": "Chris Burgett",
+      "url": "https://unsplash.com/@chrismburgett?utm_source=apex_rentals&utm_medium=referral"
+    },
+    "source": "item"
+  },
+  "Portable Evaporative Air Cooler": {
+    "photoId": "thIufsr8kwg",
+    "image": "https://images.unsplash.com/photo-1776860154052-d91c90b25c59?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8MXx8UG9ydGFibGUlMjBFdmFwb3JhdGl2ZSUyMEFpciUyMENvb2xlcnxlbnwxfDB8fHwxNzk1MzM5Mjc2fDA&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
+    "imageCredit": {
+      "name": "alpha innotec",
+      "url": "https://unsplash.com/@alpha_innotec?utm_source=apex_rentals&utm_medium=referral"
+    },
+    "source": "item"
+  },
+  "STIHL FS 230 Brush Cutter": {
+    "photoId": "1KVZhka6_-A",
+    "image": "https://images.unsplash.com/photo-1793441410243-e1c4e47a1a65?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8MXx8cGV0cm9sJTIwaGFuZGhlbGQlMjBncmFzcyUyMGJydXNoJTIwY3V0dGVyJTIwbGFuZHNjYXBpbmclMjB0b29sfGVufDF8MHx8fDE3OTUzMzk2MTh8MA&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
+    "imageCredit": {
+      "name": "Zoshua Colah",
+      "url": "https://unsplash.com/@zoshuacolah?utm_source=apex_rentals&utm_medium=referral"
+    },
+    "source": "item"
+  },
+  "24-inch LED Computer Monitor": {
+    "photoId": "V2NpjZIoQE0",
+    "image": "https://images.unsplash.com/photo-1614196593579-9934b4dbed51?ixid=M3wxMTM4Mzk3fDB8MXxzZWFyY2h8MXx8MjQtaW5jaCUyMExFRCUyMENvbXB1dGVyJTIwTW9uaXRvcnxlbnwxfDB8fHwxNzk1MzQ0MDQyfDA&ixlib=rb-4.1.0&w=1200&h=800&fit=crop&q=80&auto=format",
+    "imageCredit": {
+      "name": "Boitumelo",
+      "url": "https://unsplash.com/@writecodenow?utm_source=apex_rentals&utm_medium=referral"
     },
     "source": "item"
   }
